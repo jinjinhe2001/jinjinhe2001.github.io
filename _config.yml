@@ -82,9 +82,10 @@ analytics:
 author:
   name             : "Jinjin He"
   avatar           : "profile.png"
-  bio              : "Undergraduate  \n\
-                      School of Artificial Intelligence & Automation (AIA) \n\
-                      Huazhong University of Science & Technology"
+  bio              :  |
+                    Undergraduate
+                    School of Artificial Intelligence & Automation (AIA)
+                    Huazhong University of Science & Technology
   location         : "Santa Barbara, CA"
   employer         :
   pubmed           : 
