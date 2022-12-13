@@ -12,7 +12,9 @@ Hi! I am a fourth-year undergraduate student at Huazhong University of Science a
 
 I am broadly interested in Computer Graphics, Computer System, Game Development, Mathematical Modeling, etc.  
 
-- Projects
+Projects
+======
+
 {% include base_path %}
 
 {% for post in site.projects reversed %}
