@@ -9,5 +9,6 @@ my Raytracer based on RayTracing in One Weekend book.
 
 A simple raytracer from scratch, starting from a output of a pure color image, I built a simple vector computation library, defined classes for ray, hittable objects, materials(lambertian, dielectric, metal), etc. 
 
+![FIFA1](http://jinjinhe2001.github.io/images/Raytracer.png)
 
 [Github](https://github.com/jinjinhe2001/RayTracing-in-OneWeekend)

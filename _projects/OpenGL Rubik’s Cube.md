@@ -8,5 +8,6 @@ date: 2020-12-30
 
 Utilized the C++ OpenGL API to achieve the rotation of each layer of the Rubik’s Cube, including one-click disruption and restoration, camera movement, etc
 
+![FIFA1](http://jinjinhe2001.github.io/images/cube.png)
 
 [Github](https://github.com/jinjinhe2001/Opengl-MagicCube)
