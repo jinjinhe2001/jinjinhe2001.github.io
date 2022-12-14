@@ -2,13 +2,13 @@
 title: "parkour"
 collection: projects
 permalink: /projects/parkour
-excerpt: "Completed a parkour game for the openEuler community, made in the Cocos game engine." <br/><img src='/images/parkour1.png'>"
-date: 2020-12-01
+excerpt: "Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript." <br/><img src='/images/parkour1.png'>"
+date: 2021-09-01
 ---
 
-Come and play a game involving pathfinding algorithms and try to defeat the pathfinding AI! Click on the floor to trap the AI character in a turn-based manner, with added items like explosive crystals and time-stopping crystals.
+Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript.
 
 
-![minigame1](http://jinjinhe2001.github.io/images/parkour1.png)
+![parkour](http://jinjinhe2001.github.io/images/parkour1.png)
 
 [Github](https://github.com/jinjinhe2001/Parkour-Game)
