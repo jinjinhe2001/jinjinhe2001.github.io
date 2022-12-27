@@ -48,7 +48,7 @@ ID [a-zA-Z][a-zA-Z0-9]*
 ## Parser
 For parser, I write a Bison specification for the language grammar, which will be used to parse the input. A Bison specification is made of a list of tokens, precedence/associativity specifiers, and a grammar.  
 
-Here's a part of my Bison code.**From this you can see the Grammar defination of this language.**
+Here's a part of my Bison code. **From this you can see the Grammar defination of this language.**
 ```C++
 // parser.y
 
@@ -436,6 +436,6 @@ Main {
 	    print a.x * a.y;
      }
 }
-```
+``` . 
 
 **Due to academic integrity, I decide not to public my whole code of this project. You can email me if you are not attending this course**
