@@ -216,44 +216,44 @@ In TypeCheck.h and TypeCheck.cpp files, I writed code for TypeCheck visitor to b
 ```C++
 // TypeCheck.h
 typedef struct compoundtype {
-  BaseType baseType;
-  std::string objectClassName;
+    BaseType baseType;
+    std::string objectClassName;
 } CompoundType;
 
 typedef struct variableinfo {
-  CompoundType type;
-  int offset;
-  int size;
+    CompoundType type;
+    int offset;
+    int size;
 } VariableInfo;
 
 typedef std::map<std::string, VariableInfo> VariableTable;
 
 typedef struct methodinfo {
-  CompoundType returnType;
-  VariableTable *variables;
-  std::list<CompoundType> *parameters;
-  int localsSize;
+    CompoundType returnType;
+    VariableTable *variables;
+    std::list<CompoundType> *parameters;
+    int localsSize;
 } MethodInfo;
 
 typedef std::map<std::string, MethodInfo> MethodTable;
 
 typedef struct classinfo {
-  std::string superClassName;
-  MethodTable *methods;
-  VariableTable *members;
-  int membersSize;
+    std::string superClassName;
+    MethodTable *methods;
+    VariableTable *members;
+    int membersSize;
 } ClassInfo;
 ...
 // All the visitor functions. You will need to write
-  // appropriate implementation in the typecheck.cpp file.
-  virtual void visitProgramNode(ProgramNode* node);
-  virtual void visitClassNode(ClassNode* node);
-  virtual void visitMethodNode(MethodNode* node);
-  virtual void visitMethodBodyNode(MethodBodyNode* node);
-  virtual void visitParameterNode(ParameterNode* node);
-  virtual void visitDeclarationNode(DeclarationNode* node);
-  virtual void visitReturnStatementNode(ReturnStatementNode* node);
-  virtual void visitAssignmentNode(AssignmentNode* node);
+// appropriate implementation in the typecheck.cpp file.
+virtual void visitProgramNode(ProgramNode* node);
+virtual void visitClassNode(ClassNode* node);
+virtual void visitMethodNode(MethodNode* node);
+virtual void visitMethodBodyNode(MethodBodyNode* node);
+virtual void visitParameterNode(ParameterNode* node);
+virtual void visitDeclarationNode(DeclarationNode* node);
+virtual void visitReturnStatementNode(ReturnStatementNode* node);
+virtual void visitAssignmentNode(AssignmentNode* node);
 ...
 ```
 
@@ -261,69 +261,69 @@ typedef struct classinfo {
 // TypeCheck.cpp
 
 void TypeCheck::visitProgramNode(ProgramNode* node) {
-  classTable = new ClassTable();
-  node->visit_children(this);
+    classTable = new ClassTable();
+    node->visit_children(this);
 
-  if (classTable->count("Main") == 0) {
-    typeError(no_main_class);
-  } else if (classTable->at("Main").members->size() != 0) {
-    typeError(main_class_members_present);
-  } else if (classTable->at("Main").methods->count("main") == 0) {
-    typeError(no_main_method);
-  } else if (classTable->at("Main").methods->at("main").returnType.baseType != bt_none ||
-             classTable->at("Main").methods->at("main").parameters->size() != 0) 
-  {
-    typeError(main_method_incorrect_signature);
-  }
+    if (classTable->count("Main") == 0) {
+        typeError(no_main_class);
+    } else if (classTable->at("Main").members->size() != 0) {
+        typeError(main_class_members_present);
+    } else if (classTable->at("Main").methods->count("main") == 0) {
+        typeError(no_main_method);
+    } else if (classTable->at("Main").methods->at("main").returnType.baseType != bt_none ||
+                classTable->at("Main").methods->at("main").parameters->size() != 0) 
+    {
+        typeError(main_method_incorrect_signature);
+    }
 }
 
 void TypeCheck::visitClassNode(ClassNode* node) {
-  if (node->identifier_2 != nullptr && classTable->count(node->identifier_2->name) == 0) {
-    typeError(undefined_class);
-    return;
-  }
-  currentClassName = node->identifier_1->name;
-  currentMethodTable = new MethodTable();
-  currentVariableTable = new VariableTable();
-  currentLocalOffset = 0;
-  currentParameterOffset = 0;
-  currentMemberOffset = 0;
+    if (node->identifier_2 != nullptr && classTable->count(node->identifier_2->name) == 0) {
+        typeError(undefined_class);
+        return;
+    }
+    currentClassName = node->identifier_1->name;
+    currentMethodTable = new MethodTable();
+    currentVariableTable = new VariableTable();
+    currentLocalOffset = 0;
+    currentParameterOffset = 0;
+    currentMemberOffset = 0;
 
-  ClassInfo info;
-  if (node->identifier_2 != nullptr) {
-    ClassInfo extraInfo;
-    info.superClassName = node->identifier_2->name;
-    ClassInfo superClassInfo = (*classTable)[info.superClassName];
-    MethodTable *superExtraMethodTable = new MethodTable();
-    VariableTable *superExtraVariableTable = new VariableTable();
-    for (std::pair<const std::string, VariableInfo> p : *superClassInfo.members) {
-      (*superExtraVariableTable)[p.first] = p.second;
-    }
-    for (std::pair<const std::string, methodinfo> p: *superClassInfo.methods) {
-      (*superExtraMethodTable)[p.first] = p.second;
-    }
-    if (superClassTable->count(info.superClassName + superSuffix) != 0) {
-      ClassInfo superClassExtraInfo = (*superClassTable)[info.superClassName + superSuffix];
-      for (std::pair<const std::string, VariableInfo> p : *superClassExtraInfo.members) {
+    ClassInfo info;
+    if (node->identifier_2 != nullptr) {
+        ClassInfo extraInfo;
+        info.superClassName = node->identifier_2->name;
+        ClassInfo superClassInfo = (*classTable)[info.superClassName];
+        MethodTable *superExtraMethodTable = new MethodTable();
+        VariableTable *superExtraVariableTable = new VariableTable();
+        for (std::pair<const std::string, VariableInfo> p : *superClassInfo.members) {
         (*superExtraVariableTable)[p.first] = p.second;
-      }
-      for (std::pair<const std::string, methodinfo> p: *superClassExtraInfo.methods) {
+        }
+        for (std::pair<const std::string, methodinfo> p: *superClassInfo.methods) {
         (*superExtraMethodTable)[p.first] = p.second;
-      }
+        }
+        if (superClassTable->count(info.superClassName + superSuffix) != 0) {
+        ClassInfo superClassExtraInfo = (*superClassTable)[info.superClassName + superSuffix];
+        for (std::pair<const std::string, VariableInfo> p : *superClassExtraInfo.members) {
+            (*superExtraVariableTable)[p.first] = p.second;
+        }
+        for (std::pair<const std::string, methodinfo> p: *superClassExtraInfo.methods) {
+            (*superExtraMethodTable)[p.first] = p.second;
+        }
+        }
+        extraInfo.methods = superExtraMethodTable;
+        extraInfo.members = superExtraVariableTable;
+        (*superClassTable)[currentClassName + superSuffix] = extraInfo;
+        currentMemberOffset = superExtraVariableTable->size() * 4;
     }
-    extraInfo.methods = superExtraMethodTable;
-    extraInfo.members = superExtraVariableTable;
-    (*superClassTable)[currentClassName + superSuffix] = extraInfo;
-    currentMemberOffset = superExtraVariableTable->size() * 4;
-  }
-  
-  info.methods = currentMethodTable;
-  info.members = currentVariableTable;
-  info.membersSize = currentMemberOffset;
+    
+    info.methods = currentMethodTable;
+    info.members = currentVariableTable;
+    info.membersSize = currentMemberOffset;
 
-  (*classTable)[currentClassName] = info;
-  
-  node->visit_children(this);
+    (*classTable)[currentClassName] = info;
+    
+    node->visit_children(this);
 }
 ...
 ```
