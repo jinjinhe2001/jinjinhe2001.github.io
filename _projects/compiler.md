@@ -49,7 +49,7 @@ ID [a-zA-Z][a-zA-Z0-9]*
 For parser, I write a Bison specification for the language grammar, which will be used to parse the input. A Bison specification is made of a list of tokens, precedence/associativity specifiers, and a grammar.  
 
 Here's a part of my Bison code. **From this you can see the Grammar defination of this language.**
-```C++
+```
 // parser.y
 
 Start : Classes
@@ -182,7 +182,7 @@ I built ASTs for programs in this language using syntax-directed translation wit
 
 Here's code of Expression's AST building code.
 
-```C++
+```
 // parser.y
 Expression : Expression T_PLUS Expression     {$$ = new PlusNode($1, $3);}
             | Expression T_MINUS Expression   {$$ = new MinusNode($1, $3);}
@@ -213,7 +213,7 @@ I constructed a symbol table and perform type checking on input programs using t
 
 In TypeCheck.h and TypeCheck.cpp files, I writed code for TypeCheck visitor to build symbol table and type check the program.
 
-```C++
+```
 // TypeCheck.h
 typedef struct compoundtype {
     BaseType baseType;
@@ -257,7 +257,7 @@ virtual void visitAssignmentNode(AssignmentNode* node);
 ...
 ```
 
-```C++
+```
 // TypeCheck.cpp
 
 void TypeCheck::visitProgramNode(ProgramNode* node) {
@@ -336,7 +336,7 @@ The codegeneration.cpp and codegeneration.hpp files define the CodeGenerator vis
 
 Here a part of CodeGenerator visitor functions. And The code generation for expressions implement a stack machine.
 
-```C++
+```
 // codegeneration.cpp
 ...
 void CodeGenerator::visitProgramNode(ProgramNode* node) {
@@ -407,7 +407,7 @@ void CodeGenerator::visitPlusNode(PlusNode* node) {
 ```
 
 ## Example of this language
-```Java
+```
 classA {
      int x;
      int y;
@@ -436,6 +436,123 @@ Main {
 	    print a.x * a.y;
      }
 }
-``` . 
+```
+x86 Assembly code Translated through my compiler
+```
+.data
+printstr: .asciz "%d\n"
+.text
+.globl Main_main
+classA_classA:
+  push %ebp
+  mov %esp, %ebp
+  push %ebx
+  push %esi
+  push %edi
+  mov 12(%ebp), %eax
+  push %eax
+  pop %eax
+  mov 8(%ebp), %edx
+  mov %eax, 0(%edx)
+  mov 16(%ebp), %eax
+  push %eax
+  pop %eax
+  mov 8(%ebp), %edx
+  mov %eax, 4(%edx)
+  pop %edi
+  pop %esi
+  pop %ebx
+  mov %ebp, %esp
+  pop %ebp
+  ret
+classA_inc:
+  push %ebp
+  mov %esp, %ebp
+  push %ebx
+  push %esi
+  push %edi
+  mov 8(%ebp), %edx
+  mov 0(%edx), %eax
+  push %eax
+  push $2
+  pop %edx
+  pop %eax
+  imul %edx, %eax
+  push %eax
+  pop %eax
+  mov 8(%ebp), %edx
+  mov %eax, 0(%edx)
+  mov 8(%ebp), %edx
+  mov 4(%edx), %eax
+  push %eax
+  push $1
+  pop %edx
+  pop %eax
+  add %edx, %eax
+  push %eax
+  pop %eax
+  mov 8(%ebp), %edx
+  mov %eax, 4(%edx)
+  pop %edi
+  pop %esi
+  pop %ebx
+  mov %ebp, %esp
+  pop %ebp
+  ret
+Main_main:
+  push %ebp
+  mov %esp, %ebp
+  sub $8, %esp
+  push %ebx
+  push %esi
+  push %edi
+  push $4
+  push $3
+  push $8
+  call malloc
+  add $4, %esp
+  push %eax
+  call classA_classA
+  pop %eax
+  add $8, %esp
+  push %eax
+  pop %eax
+  mov %eax, -4(%ebp)
+  mov -4(%ebp), %edx
+  mov 0(%edx), %eax
+  push %eax
+  push $printstr
+  call printf
+  add $8, %esp
+  mov -4(%ebp), %edx
+  mov 4(%edx), %eax
+  push %eax
+  push $printstr
+  call printf
+  add $8, %esp
+  push -4(%ebp)
+  call classA_inc
+  add $4, %esp
+  push %eax
+  mov -4(%ebp), %edx
+  mov 0(%edx), %eax
+  push %eax
+  mov -4(%ebp), %edx
+  mov 4(%edx), %eax
+  push %eax
+  pop %edx
+  pop %eax
+  imul %edx, %eax
+  push %eax
+  push $printstr
+  call printf
+  add $8, %esp
+  pop %edi
+  pop %esi
+  pop %ebx
+  mov %ebp, %esp
+  pop %ebp
+  ret
+```
 
 **Due to academic integrity, I decide not to public my whole code of this project. You can email me if you are not attending this course**
