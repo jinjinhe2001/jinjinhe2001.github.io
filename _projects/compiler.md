@@ -18,7 +18,7 @@ Through the course of CS160, I completed a Lexer, Parser, Abstract Syntax Tree, 
 I write a Flex specification for all the tokens in the language, which will be used by the parser. A Flex specification is made up of rules, which are a regular expression to match as well as a block of C code that should return a token for that expression.  
 
 Here's a part of my lexer specification.
-```C++
+```
 // lexer.l
 NUMBER [1-9][0-9]*|0
 ID [a-zA-Z][a-zA-Z0-9]* 
