@@ -5,7 +5,13 @@ permalink: /projects/compiler
 excerpt: "Completed a toy compiler and received an A+ in UCSB CS160 course!"
 date: 2022-12-15
 ---
-Toy compiler(CS160)
+- [Lexer](#lexer)
+- [Parser](#parser)
+- [Abstract Syntax Tree](#abstract-syntax-tree)
+- [Semantic Analysis](#semantic-analysis)
+- [Code Generation](#code-generation)
+- [Example of this language](#example-of-this-language)
+
 
 Completed a toy compiler and received an A+ in UCSB CS160 course!
 
