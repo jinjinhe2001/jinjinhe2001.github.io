@@ -6,7 +6,13 @@ excerpt: "A simple raytracer from scratch written in C++, starting from a output
 date: 2022-09-20
 ---
 An offline raytracing renderer based on RayTracing in One Weekend book.  
-[Github](https://github.com/jinjinhe2001/RayTracer)
+- [Github](https://github.com/jinjinhe2001/RayTracer)
+- [Overview](#overview)
+- [Rendering](#rendering)
+- [Interaction between rays and the scene](#interaction-between-rays-and-the-scene)
+- [Object](#object)
+- [Material](#material)
+- [Result](#result)
 
 ![Raytracer](http://jinjinhe2001.github.io/images/Raytracer.png)
 
