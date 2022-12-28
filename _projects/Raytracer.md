@@ -44,10 +44,10 @@ for (int j = image_height - 1; j >= 0; j--) {
     }
 }
 ```
-We scan pixel by pixel from `(0, image_height - 1)` coordinates of the preset screen, and in each pixel this code emits `samples_per_pixel` rays with tiny deviation values on direction, the `ray_color` function can complete the interaction between rays and the scene and return color.
+This code scans pixel by pixel from `(0, image_height - 1)` coordinates of the preset screen, and in each pixel this code emits `samples_per_pixel` rays with tiny deviation values on direction, the `ray_color` function can complete the interaction between rays and the scene and return color.
 
 ## Interaction between rays and the scene
-The `ray_color` function takes in two parameters: a `const ray& r` representing an incoming light ray, and a `const hittable& world` representing the 3D scene. The function processes these inputs to determine the color of the pixel corresponding to the ray.
+The `ray_color` function takes in three parameters: a `const ray& r` representing an incoming light ray, and a `const hittable& world` representing the 3D scene. a `depth` to limit number of recursions. The function processes these inputs to determine the color of the pixel corresponding to the ray.
 ```
 color ray_color(const ray& r, const hittable& world, int depth) {
     hit_record rec;
