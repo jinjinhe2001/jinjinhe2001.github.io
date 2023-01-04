@@ -14,8 +14,8 @@ This is an interesting ball system built using OpenGL. It allows for the creatio
 - The OpenGL scaffold is located in the OpenGL-Core folder and includes vendor files. It can be used as a starting point for creating projects using OpenGL.
 
 ## Example
-![init](https://github.com/jinjinhe2001/Ball-System/blob/main/Readme/images/init.gif)
-![bouncy](https://github.com/jinjinhe2001/Ball-System/blob/main/Readme/images/bouncy.gif)  
+![init](http://jinjinhe2001.github.io/images/raytracer/ballsystem/init.gif)
+![bouncy](http://jinjinhe2001.github.io/images/raytracer/ballsystem/bouncy.gif)  
 more bouncy balls   
 
 
