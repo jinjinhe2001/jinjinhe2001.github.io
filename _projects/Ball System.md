@@ -14,16 +14,16 @@ This is an interesting ball system built using OpenGL. It allows for the creatio
 - The OpenGL scaffold is located in the OpenGL-Core folder and includes vendor files. It can be used as a starting point for creating projects using OpenGL.
 
 ## Example
-![init](http://jinjinhe2001.github.io/images/raytracer/ballsystem/init.png)
-![bouncy](http://jinjinhe2001.github.io/images/raytracer/ballsys.png)  
+![init](http://jinjinhe2001.github.io/images/ballsystem/init.png)
+![bouncy](http://jinjinhe2001.github.io/images/ballsys.png)  
 more bouncy balls   
 
-<video width="500" height="250" controls>
+<video width:100% height:auto controls>
     <source src="https://user-images.githubusercontent.com/72654824/210527097-40fcd49c-5084-49c0-9cdf-7c3f8fedf5ad.mp4" type="video/mp4">
 </video>
 
 a normal solar system    
 
-<video width="500" height="250" controls>
+<video width:100% height:auto controls>
     <source src="https://user-images.githubusercontent.com/72654824/210527110-35e735b2-bcaa-402a-977c-66b6badd5975.mp4" type="video/mp4">
 </video>
