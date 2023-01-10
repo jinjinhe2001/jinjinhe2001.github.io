@@ -1,5 +1,5 @@
 ---
-title: "electricity"
+title: "Electricity"
 collection: projects
 permalink: /projects/electricity
 excerpt: "A Multiplayer co-op puzzle game where players can control two small TVs to guide power and open the gate to complete the level! Made with Unity. This is also a selection task for entering memo lab <br/><img src='/images/Electricity1.png'>"

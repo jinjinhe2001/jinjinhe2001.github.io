@@ -1,5 +1,5 @@
 ---
-title: "parkour"
+title: "Parkour"
 collection: projects
 permalink: /projects/parkour
 excerpt: "Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. <br/><img src='/images/parkour1.png'>"
