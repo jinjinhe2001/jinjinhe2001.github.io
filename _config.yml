@@ -175,7 +175,7 @@ kramdown:
 
 # Collections
 collections:
-  teaching:
+  paintings:
     output: true
     permalink: /:collection/:path/
   projects:
@@ -209,10 +209,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
+  # _paintings
   - scope:
       path: ""
-      type: teaching
+      type: paintings
     values:
       layout: single
       author_profile: true
