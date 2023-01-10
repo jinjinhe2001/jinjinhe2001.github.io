@@ -4,6 +4,7 @@ collection: projects
 permalink: /projects/fifa
 excerpt: "A FIFA soccer game written in pure C language! Includes single player vs AI, Multiplayer games, team editing, player editing, successful building on VS community and porting to Dosbox. <br/><img src='/images/FIFA1.png'>"
 date: 2020-09-01
+tag: 'game'
 ---
 
 A FIFA soccer game written in pure C language! Includes single player vs AI, Multiplayer games, team editing, player editing, successful building on VS community and porting to Dosbox.
