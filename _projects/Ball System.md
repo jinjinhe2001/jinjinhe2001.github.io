@@ -4,6 +4,7 @@ collection: projects
 permalink: /projects/ballsys
 excerpt: "This is an interesting ball system built using OpenGL. It allows for the creation and manipulation of various balls in a 3D environment. Features include the ability to change the size and color of the balls, as well as the ability to apply forces and make them bounce off of each other and the walls of the environment. <br/><img src='/images/ballsys.png'>"
 date: 2023-01-01
+tag: 'graphics'
 ---
 ## Introduction
 This is an interesting ball system built using OpenGL. It allows for the creation and manipulation of various balls in a 3D environment. Features include the ability to change the size and color of the balls, as well as the ability to apply forces and make them bounce off of each other and the walls of the environment.

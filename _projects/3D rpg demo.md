@@ -4,6 +4,8 @@ collection: projects
 permalink: /projects/3d-rpg-demo
 excerpt: "A 3D RPG demo similar to World of Warcraft, where players can control a hero to attack AI enemies and then upgrade to gain new attack abilities! Made with Unity. <br/><img src='/images/FightingScene4.png'>"
 date: 2021-04-01
+weight: 10
+tag: 'game'
 ---
 
 A 3D RPG demo similar to World of Warcraft, where players can control a hero to attack AI enemies and then upgrade to gain new attack abilities! Made with Unity.
