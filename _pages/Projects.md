@@ -44,6 +44,7 @@ author_profile: true
 
 #projectsMasthead {
     border-bottom: 0px !important;
+    width: 0px;
 }
 
 #projectsMasthead .masthead__inner-wrap {

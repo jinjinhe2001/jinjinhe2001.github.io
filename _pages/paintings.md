@@ -18,6 +18,7 @@ author_profile: true
     .paintingsImgWrap img {
         max-width: 350px;
         height: fit-content;
+            min-width: 64px;
     }
 </style>
 <div class="paintingsImgWrap">
