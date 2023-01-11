@@ -30,6 +30,5 @@ author_profile: true
     <img src="http://jinjinhe2001.github.io/images/painting/character-jump.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/character-stand.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/line.jpg" >
-    <img src="http://jinjinhe2001.github.io/images/painting/meme.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/paint1.png" >
 </div>
