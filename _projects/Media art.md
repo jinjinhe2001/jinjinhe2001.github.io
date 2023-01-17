@@ -3,7 +3,7 @@ title: "Media art"
 collection: projects
 permalink: /projects/media-art
 excerpt: "In progress. Here's some of the work I'm doing on UCSB media art courses. <br/><img src='/images/sand1.jpg'>"
-date: 2023-01-01
+date: 2023-01-15
 tag: 'graphics'
 ---
 ## Introduction
