@@ -25,32 +25,6 @@ Through the course of CS160, I completed a Lexer, Parser, Abstract Syntax Tree, 
 I write a Flex specification for all the tokens in the language, which will be used by the parser. A Flex specification is made up of rules, which are a regular expression to match as well as a block of C code that should return a token for that expression.  
 
 Here's a part of my lexer specification.
-<html>
-<style>
-    .mac {
-        width:10px;
-        height:10px;
-        border-radius:5px;
-        float:left;
-        margin:10px 0 0 5px;
-    }
-    .b1 {
-        background:#E0443E;
-        margin-left: 10px;
-    }
-    .b2 { background:#DEA123; }
-    .b3 { background:#1AAB29; }
-    .warpper{
-        background:#121212;
-        border-radius:5px;
-        width:100%;
-    }
-</style>
-<div class="warpper">
-    <div class="mac b1"></div>
-    <div class="mac b2"></div>
-    <div class="mac b3"></div>
-
 
 ```
 // lexer.l
@@ -78,9 +52,6 @@ ID [a-zA-Z][a-zA-Z0-9]*
 {NUMBER}          { yylval.base_int = std::atoi(yytext) ; return T_NUMBER; }
 {ID}              { yylval.base_char_ptr = new char(); strcpy(yylval.base_char_ptr, yytext) ; return T_ID; }
 ```
-</div>
-<br>
-</html>
 ## Parser
 For parser, I write a Bison specification for the language grammar, which will be used to parse the input. A Bison specification is made of a list of tokens, precedence/associativity specifiers, and a grammar.  
 
