@@ -98,7 +98,6 @@ Here's a part of my lexer specification.
 <div class="mac b3"></div>
 </div>
 
-
 ```
 // lexer.l
 NUMBER [1-9][0-9]*|0
