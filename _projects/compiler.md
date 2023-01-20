@@ -48,7 +48,7 @@ Here's a part of my lexer specification.
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
-    .highlighter-rouge {
+    div.highlighter-rouge {
         background-color: #404040 !important;
         border-top-left-radius:0px !important;
         border-top-right-radius:0px !important;
@@ -58,7 +58,7 @@ Here's a part of my lexer specification.
     .highlighter-rouge:before{
         display: none;
     }
-    .language-plaintext.highlighter-rouge{
+    div.language-plaintext.highlighter-rouge{
         color: #b7b8ba !important;
     }
 
