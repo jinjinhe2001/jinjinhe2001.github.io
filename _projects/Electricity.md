@@ -12,7 +12,7 @@ A Multiplayer co-op puzzle game where players can control two small TVs to guide
 And you can download and play it here. It's on Windows Platform.
 [Download](https://github.com/jinjinhe2001/memo-Unitytest/releases/download/game/GameRelease.rar)
 
-See the video on youtube!   
+Click the pic below, and see the video on youtube!   
 [![Img alt text](https://img.youtube.com/vi/stRFsFD7o20/0.jpg)](https://www.youtube.com/watch?v=stRFsFD7o20)  
 
 
