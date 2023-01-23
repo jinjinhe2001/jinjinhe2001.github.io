@@ -7,7 +7,7 @@ date: 2021-09-01
 tag: 'game'
 ---
 
-I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project, and I was the only programmer.
+I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project, and I was the only programmer.  
 [Github](https://github.com/jinjinhe2001/Parkour-Game)
 ## Gameplay
 - use your fingers to swipe left and right on the screen to control Euler and avoid obstacles. Swipe up to jump, and swipe down to slide.
