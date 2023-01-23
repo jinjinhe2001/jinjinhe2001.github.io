@@ -7,10 +7,10 @@ date: 2020-10-10
 tag: 'game'
 ---
 
-A Multiplayer co-op puzzle game where players can control two small TVs to guide power and open the gate to complete the level! Made with Unity. This is also a selection task for entering memo lab. [Github](https://github.com/jinjinhe2001/memo-Unitytest)  
+A Multiplayer co-op puzzle game where players can control two small TVs to guide power and open the gate to complete the level! Made with Unity. This is also a selection task for entering memo lab.  
+[Github](https://github.com/jinjinhe2001/memo-Unitytest)  
 
-And you can download and play it here. It's on Windows Platform.
-[Download](https://github.com/jinjinhe2001/memo-Unitytest/releases/download/game/GameRelease.rar)
+[Download and play](https://github.com/jinjinhe2001/memo-Unitytest/releases/download/game/GameRelease.rar). It's on Windows Platform.
 
 Click the pic below, and see the video on youtube!   
 [![Img alt text](https://img.youtube.com/vi/stRFsFD7o20/0.jpg)](https://www.youtube.com/watch?v=stRFsFD7o20)  
