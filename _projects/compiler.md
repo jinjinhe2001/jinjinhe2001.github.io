@@ -25,6 +25,79 @@ Through the course of CS160, I completed a Lexer, Parser, Abstract Syntax Tree, 
 I write a Flex specification for all the tokens in the language, which will be used by the parser. A Flex specification is made up of rules, which are a regular expression to match as well as a block of C code that should return a token for that expression.  
 
 Here's a part of my lexer specification.
+
+<style>
+    .mac {
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        float:left;
+        margin:10px 0 0 4px;
+    }
+    .b1 {
+        background:#E0443E;
+        margin-left: 10px;
+    }
+    .b2 { background:#DEA123; }
+    .b3 { background:#1AAB29; }
+    .warpper{
+        background:#3b3c3e;
+        border-radius:5px;
+        width:100%;
+        height: 30px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    div.highlighter-rouge {
+        background-color: #404040 !important;
+        border-top-left-radius:0px !important;
+        border-top-right-radius:0px !important;
+        border: 0px !important;
+        border-top: 1px solid #000000 !important;
+    }
+    .highlighter-rouge:before{
+        display: none;
+    }
+    div.language-plaintext.highlighter-rouge{
+        color: #b7b8ba !important;
+    }
+
+    .highlight::-webkit-scrollbar {
+        width: 3px; /* 对垂直滚动条有效 */
+        height: 3px;  /* 对水平滚动条有效 */
+    }
+
+    .highlight::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    .highlight::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #b8b9bb;
+        border-radius: 5px;
+    }
+
+    .highlight::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: rgba(0, 0, 0, .1);
+    }
+
+    .highlight::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, .2);
+    }
+
+    .highlight::-webkit-scrollbar-corner {
+        background: khaki;
+    }
+</style>
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 // lexer.l
 NUMBER [1-9][0-9]*|0
@@ -51,11 +124,17 @@ ID [a-zA-Z][a-zA-Z0-9]*
 {NUMBER}          { yylval.base_int = std::atoi(yytext) ; return T_NUMBER; }
 {ID}              { yylval.base_char_ptr = new char(); strcpy(yylval.base_char_ptr, yytext) ; return T_ID; }
 ```
-
 ## Parser
 For parser, I write a Bison specification for the language grammar, which will be used to parse the input. A Bison specification is made of a list of tokens, precedence/associativity specifiers, and a grammar.  
 
 Here's a part of my Bison code. **From this you can see the Grammar defination of this language.**
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 // parser.y
 
@@ -189,6 +268,12 @@ I built ASTs for programs in this language using syntax-directed translation wit
 
 Here's code of Expression's AST building code.
 
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 // parser.y
 Expression : Expression T_PLUS Expression     {$$ = new PlusNode($1, $3);}
@@ -219,6 +304,12 @@ Expression : Expression T_PLUS Expression     {$$ = new PlusNode($1, $3);}
 I constructed a symbol table and perform type checking on input programs using the AST. The symbol table stores all necessary information about symbols (classes, methods, members, and variables) present and contains information necessary to type check and generate code. I then built on top of the symbol table generation and perform type checking on the input programs.  
 
 In TypeCheck.h and TypeCheck.cpp files, I writed code for TypeCheck visitor to build symbol table and type check the program.
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
 
 ```
 // TypeCheck.h
@@ -263,6 +354,12 @@ virtual void visitReturnStatementNode(ReturnStatementNode* node);
 virtual void visitAssignmentNode(AssignmentNode* node);
 ...
 ```
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
 
 ```
 // TypeCheck.cpp
@@ -343,6 +440,12 @@ The codegeneration.cpp and codegeneration.hpp files define the CodeGenerator vis
 
 Here a part of CodeGenerator visitor functions. And The code generation for expressions implement a stack machine.
 
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 // codegeneration.cpp
 ...
@@ -414,6 +517,13 @@ void CodeGenerator::visitPlusNode(PlusNode* node) {
 ```
 
 ## Example of this language
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 classA {
      int x;
@@ -445,6 +555,13 @@ Main {
 }
 ```
 x86 Assembly code Translated through my compiler
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 .data
 printstr: .asciz "%d\n"

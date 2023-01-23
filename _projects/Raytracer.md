@@ -6,6 +6,72 @@ excerpt: "A simple raytracer from scratch written in C++, starting from a output
 date: 2022-09-20
 tag: 'graphics'
 ---
+<style>
+    .mac {
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        float:left;
+        margin:10px 0 0 4px;
+    }
+    .b1 {
+        background:#E0443E;
+        margin-left: 10px;
+    }
+    .b2 { background:#DEA123; }
+    .b3 { background:#1AAB29; }
+    .warpper{
+        background:#3b3c3e;
+        border-radius:5px;
+        width:100%;
+        height: 30px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    div.highlighter-rouge {
+        background-color: #404040 !important;
+        border-top-left-radius:0px !important;
+        border-top-right-radius:0px !important;
+        border: 0px !important;
+        border-top: 1px solid #000000 !important;
+    }
+    .highlighter-rouge:before{
+        display: none;
+    }
+    div.language-plaintext.highlighter-rouge{
+        color: #b7b8ba !important;
+    }
+
+    .highlight::-webkit-scrollbar {
+        width: 3px; /* 对垂直滚动条有效 */
+        height: 3px;  /* 对水平滚动条有效 */
+    }
+
+    .highlight::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    .highlight::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #b8b9bb;
+        border-radius: 5px;
+    }
+
+    .highlight::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: rgba(0, 0, 0, .1);
+    }
+
+    .highlight::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, .2);
+    }
+
+    .highlight::-webkit-scrollbar-corner {
+        background: khaki;
+    }
+</style>
+
 An offline raytracing renderer based on RayTracing in One Weekend book.  
 - [Github](https://github.com/jinjinhe2001/RayTracer)
 - [Overview](#overview)
@@ -30,6 +96,13 @@ This program utilizes a rendering technique called ray tracing, in which a large
 ## Rendering 
 
 In `main.cpp`, here is the core code for rendering.
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 for (int j = image_height - 1; j >= 0; j--) {
     std::cerr << "\rScanlines remaining: " << j << std::flush;
@@ -49,6 +122,13 @@ This code scans pixel by pixel from `(0, image_height - 1)` coordinates of the p
 
 ## Interaction between rays and the scene
 The `ray_color` function takes in three parameters: a `const ray& r` representing an incoming light ray, and a `const hittable& world` representing the 3D scene. a `depth` to limit number of recursions. The function processes these inputs to determine the color of the pixel corresponding to the ray.
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 color ray_color(const ray& r, const hittable& world, int depth) {
     hit_record rec;
@@ -76,6 +156,13 @@ The `world.hit(r, 0.001, infinity, rec)` will find object which is first to be h
 For objects, which primarily serve the function of collision detection with rays, I mainly focused on implementing collision detection for sphere.
 
 Example code for sphere.
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 
 class sphere : public hittable
@@ -125,6 +212,13 @@ bool sphere::hit(const ray& r, double t_min, double t_max, hit_record& rec) cons
 ## Material
 I implement three different materials inherited from base class.  
 Here's the example code of metal material.
+
+<div class="warpper">
+<div class="mac b1"></div>
+<div class="mac b2"></div>
+<div class="mac b3"></div>
+</div>
+
 ```
 class metal : public material
 {

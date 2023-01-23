@@ -26,6 +26,11 @@ author_profile: true
     -o-transform: translatey(-50%);
     -webkit-transform: translatey(-50%);
     transform: translatey(-50%);
+    overflow: auto;
+    max-height: 80%;
+}
+.rightNavigator::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 
 .projectsItems {
