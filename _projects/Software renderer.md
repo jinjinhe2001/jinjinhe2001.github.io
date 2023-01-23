@@ -2,14 +2,14 @@
 title: "Software renderer"
 collection: projects
 permalink: /projects/software-renderer
-excerpt: "Designed the C++ software raster renderer with a graphic pipeline covering shading, texture, shadows, vector calculation, model storage <br/><img src='/images/renderer.png'>"
+excerpt: "Implemented a C++ software renderer with a graphic pipeline covering shading, texture, shadows, vector calculation, model storage <br/><img src='/images/renderer.png'>"
 date: 2022-05-01
 tag: 'graphics'
 ---
 
 I implement a CPU-based software rendering pipeline system from scratch using modern computer graphics theory. The system provides interfaces for image input and output, and is platform-independent. It includes a mathematical template library with various mathematical operations for vectors and matrices, as well as a complete rendering pipeline. During the design process, I implemented a shader interface to facilitate the implementation of additional effects, while ensuring that the code structure is clear and the modules are well-divided, making the system easy to maintain and modify.
 
-![FIFA1](http://jinjinhe2001.github.io/images/renderer.png)
+![renderer](http://jinjinhe2001.github.io/images/renderer.png)
 ## Example shader code for Blinn-Phong in our system.
 ```
 Color Shader::FragmentShader()
