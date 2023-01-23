@@ -7,9 +7,10 @@ date: 2021-04-30
 tag: 'game'
 ---
 
-A simulation management game about wine culture. It's a group work at memo lab. realized functions as card interaction logic, UI dragging, game plot controller and media management.
+A simulation management game about Chinese wine culture. It's a group work at memo lab. realized functions as card interaction logic, UI dragging, game plot controller and media management.
 
-
-![parkour](http://jinjinhe2001.github.io/images/Spirit1.png)
+<iframe width="640" height="390" 
+    src="https://youtu.be/9-3g4U-fKBs" 
+    frameborder="0" allowfullscreen></iframe>
 
 [Github](https://github.com/jinjinhe2001/Spirit)
