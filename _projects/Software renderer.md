@@ -11,4 +11,4 @@ Designed the software raster renderer with a graphic pipeline covering shading, 
 
 ![FIFA1](http://jinjinhe2001.github.io/images/renderer.png)
 
-[Github](https://github.com/y783332177/softRenderer)
+[Github](https://github.com/jinjinhe2001/SoftRenderer)
