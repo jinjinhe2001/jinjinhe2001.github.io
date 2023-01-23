@@ -2,7 +2,7 @@
 title: "Spirit"
 collection: projects
 permalink: /projects/spirit
-excerpt: "A simulation management game about wine culture. It's a group work at memo lab. Run your own wine industry here! [Video](https://www.youtube.com/watch?v=9-3g4U-fKBs) <br/><img src='/images/Spirit1.png'>"
+excerpt: "A simulation management game about wine culture. It's a group work at memo lab. Run your own wine industry here! [Video](https://www.youtube.com/watch?v=9-3g4U-fKBs)<br/><img src='/images/Spirit1.png'>"
 date: 2021-04-30
 tag: 'game'
 ---
