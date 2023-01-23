@@ -2,7 +2,7 @@
 title: "Parkour"
 collection: projects
 permalink: /projects/parkour
-excerpt: "I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project, and I was the only programmer.<br/><img src='/images/parkour1.png'>"
+excerpt: "I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project, and I was the only programmer. <li class="masthead__menu-item"><a href="https://jinjinhe2001.github.io/web-desktop/index.html">Start Game Now! </a></li> It may take a few seconds for loading. <br/><img src='/images/parkour1.png'>"
 date: 2021-09-01
 tag: 'game'
 ---
