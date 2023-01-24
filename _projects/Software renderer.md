@@ -2,7 +2,7 @@
 title: "Software renderer"
 collection: projects
 permalink: /projects/software-renderer
-excerpt: "Implemented a C++ software renderer with a graphic pipeline covering shading, texture, shadows, vector calculation, model storage <br/><img src='/images/renderer.png'>"
+excerpt: "I Implement a C++ software renderer with a graphic pipeline covering shading, texture, shadows, vector calculation, model loading.<br/><img src='/images/renderer.png'>"
 date: 2022-05-01
 tag: 'graphics'
 ---

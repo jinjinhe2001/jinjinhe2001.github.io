@@ -2,12 +2,12 @@
 title: "Parkour"
 collection: projects
 permalink: /projects/parkour
-excerpt: "I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project, and I was the only programmer. [Start Game Now!](https://jinjinhe2001.github.io/web-desktop/index.html).It's a web game and it may take a few seconds for loading. <br/><img src='/images/parkour1.png'>"
+excerpt: "I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. [Start Game Now!](https://jinjinhe2001.github.io/web-desktop/index.html).It's a web game and it may take a few seconds for loading. <br/><img src='/images/parkour1.png'>"
 date: 2021-09-01
 tag: 'game'
 ---
 
-I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project, and I was the only programmer.   
+I Completed a parkour game for the openEuler community, made in the Cocos game engine with  Typescript. This was a team project within the openEuler community, and I was the only programmer.   
 [Github](https://github.com/jinjinhe2001/Parkour-Game)
 <li class="masthead__menu-item"><a href="https://jinjinhe2001.github.io/web-desktop/index.html">Start Game Now! </a></li> Click this and play on the web. It may take a few seconds for loading.
 ## Gameplay

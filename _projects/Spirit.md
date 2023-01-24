@@ -7,7 +7,7 @@ date: 2021-04-30
 tag: 'game'
 ---
 
-A simulation management game about Chinese wine culture. It's a group work at memo lab. Run your own wine industry here!  
+A simulation management game about Chinese wine culture. It's a group work at memo lab. Run your own wine industry here! This is a team project at the memo  studio.
 [Github](https://github.com/jinjinhe2001/Spirit)   
 
 Click the pic below, and see the video on youtube!   

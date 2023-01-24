@@ -2,7 +2,7 @@
 title: "Raytracer"
 collection: projects
 permalink: /projects/raytracer
-excerpt: "A simple raytracer from scratch written in C++, starting from a output of a pure color image, I built a simple vector computation library, defined classes for ray, hittable objects, materials(lambertian, dielectric, metal), etc. <br/><img src='/images/Raytracer.png'>"
+excerpt: "I implement a simple raytracer from scratch written in C++, starting from a output of a pure color image, I built a simple vector computation library, defined classes for ray, hittable objects, materials(lambertian, dielectric, metal), etc. <br/><img src='/images/Raytracer.png'>"
 date: 2022-09-20
 tag: 'graphics'
 ---

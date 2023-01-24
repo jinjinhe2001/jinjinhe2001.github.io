@@ -8,7 +8,7 @@ weight: 10
 tag: 'game'
 ---
 
-A 3D RPG demo similar to World of Warcraft, where players can control a hero to attack AI enemies and then upgrade to gain new attack abilities! Made with Unity.    
+I made a 3D RPG demo similar to World of Warcraft, where players can control a hero to attack AI enemies and then upgrade to gain new attack abilities! Made with Unity.    
 [Github](https://github.com/jinjinhe2001/3D-RPG-demo)  
 [Download the game](https://github.com/jinjinhe2001/3D-RPG-demo/releases/download/v1.0.0/3D.RPG.zip) for the Windows platform
 
