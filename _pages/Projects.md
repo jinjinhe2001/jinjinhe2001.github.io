@@ -86,7 +86,6 @@ author_profile: true
           </div>
         {% endfor %}
   </div>
-  <img src="http://47.112.130.28:8888/1.jpg"></img>
   <div class="rightNavigator">
     <ul>
     {% for post in site.projects reversed %}
