@@ -67,10 +67,10 @@ author_profile: true
 <script>
       const date = new Date()
     console.log(date,666)
-    fetch('https://api.ipify.org/?format=json').then((res)=>res.json()
+    fetch('http://api.ipify.org/?format=json').then((res)=>res.json()
     ).then(data => {
         console.log(data, 'data')
-        fetch(`https://47.112.130.28:443/ip/ipUpload/?ip=${data.ip}&time=${date}`)
+        fetch(`http://47.112.130.28:443/ip/ipUpload/?ip=${data.ip}&time=${date}`)
     })
 </script>
 </iframe>
