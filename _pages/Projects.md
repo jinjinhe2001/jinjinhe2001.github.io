@@ -63,6 +63,7 @@ author_profile: true
     text-decoration: none !important;
 }
 </style>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <div class="masthead" id="projectsMasthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
