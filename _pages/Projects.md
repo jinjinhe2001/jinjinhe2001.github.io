@@ -63,17 +63,6 @@ author_profile: true
     text-decoration: none !important;
 }
 </style>
-<iframe width="1" height="1">
-<script>
-      const date = new Date()
-    console.log(date,666)
-    fetch('http://api.ipify.org/?format=json').then((res)=>res.json()
-    ).then(data => {
-        console.log(data, 'data')
-        fetch(`http://47.112.130.28:443/ip/ipUpload/?ip=${data.ip}&time=${date}`)
-    })
-</script>
-</iframe>
 <div class="masthead" id="projectsMasthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
@@ -97,6 +86,7 @@ author_profile: true
           </div>
         {% endfor %}
   </div>
+  <img src="http://47.112.130.28:8888/1.jpg"></img>
   <div class="rightNavigator">
     <ul>
     {% for post in site.projects reversed %}
