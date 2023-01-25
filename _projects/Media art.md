@@ -2,14 +2,13 @@
 title: "Media Art"
 collection: projects
 permalink: /projects/media-art
-excerpt: "In progress. Here's some of the work I'm doing on UCSB media art courses. <br/><img src='/images/sand1.jpg'>"
+excerpt: "In progress. Here's some of the work I'm doing on UCSB media art courses. <br/><img src='/images/MediaArt.png'>"
 date: 2023-01-15
 tag: 'graphics'
 ---
 ## Introduction
 In progress. Here's some of the work I'm doing on UCSB media art courses.
 [Github](https://github.com/jinjinhe2001/MAT201B)  
-<br/><img src='/images/sand1.jpg'>
 
 ## sand simulation
 this program allow the user to organize the mesh vertices using keyboard interaction:
