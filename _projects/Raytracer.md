@@ -84,7 +84,7 @@ An offline raytracing renderer based on RayTracing in One Weekend book.
 ![Raytracer](http://jinjinhe2001.github.io/images/Raytracer.png)
 
 ## Overview 
-An offline raytracing built from scratch, starting from a output of a pure color image, I built a functional vector library, defined classes for ray, hittable objects, materials(lambertian, dielectric, metal), etc.  
+An offline raytracing built from scratch, starting from an output of a pure color image, I built a functional vector library, defined classes for ray, hittable objects, materials(lambertian, dielectric, metal), etc.  
 
 - Platform: macOS, Linux, Windows
 - Dependency: g++ std=c++11

@@ -6,7 +6,7 @@ author_profile: true
 ---
 <h1 class="page__title">Paintings</h1>
 <p>
-    I tried to learn painting during my high school graduation summer, but unfortunately, after that, my busy schedule with computer science studies prevented me from making much progress and my paintings are still at a "kids" level. But that's okay, I think I'll continue my interests after this busy application and exchange study season :) .
+    I learnt about painting during the summer vacation after my high school graduation. Basically I studied about perspective, practised how to draw by auxiliary line, and designed pixel art by myself through this precious course, which not only built up a fundamental cognition but also stimulated my great passion toward graphics investigation. 
 </p>
 <style>
     .paintingsImgWrap{
