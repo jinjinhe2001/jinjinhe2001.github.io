@@ -175,7 +175,7 @@ kramdown:
 
 # Collections
 collections:
-  paintings:
+  arts:
     output: true
     permalink: /:collection/:path/
   projects:
@@ -209,10 +209,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _paintings
+  # _arts
   - scope:
       path: ""
-      type: paintings
+      type: arts
     values:
       layout: single
       author_profile: true
