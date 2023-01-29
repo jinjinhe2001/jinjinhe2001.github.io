@@ -21,12 +21,12 @@ author_profile: true
         min-width: 64px;
     }
 </style>
+<img src="http://jinjinhe2001.github.io/images/painting/car1.jpg" >
 <div class="paintingsImgWrap">
     <img src="http://jinjinhe2001.github.io/images/painting/3dv.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/anime1.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/c1.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/c2.png" >
-    <img src="http://jinjinhe2001.github.io/images/painting/car1.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/character-jump.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/character-stand.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/line.jpg" >
