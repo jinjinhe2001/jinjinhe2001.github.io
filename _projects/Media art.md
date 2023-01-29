@@ -2,12 +2,12 @@
 title: "Media Art"
 collection: projects
 permalink: /projects/media-art
-excerpt: "In progress. Here's some of the work I'm doing on UCSB media art courses. 1.Sand Simulation 2.Solar system <br/><img src='/images/MediaArt.png'>"
+excerpt: "In progress. Here are some of the projects I am working on for media art courses at UCSB. 1.Sand Simulation 2.Solar system <br/><img src='/images/MediaArt.png'>"
 date: 2023-01-15
 tag: 'graphics'
 ---
 ## Introduction
-In progress. Here's some of the work I'm doing on UCSB media art courses.
+In progress. Here are some of the projects I am working on for media art courses at UCSB.
 [Github](https://github.com/jinjinhe2001/MAT201B)  
 
 ## sand simulation
