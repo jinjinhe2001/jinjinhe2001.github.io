@@ -23,6 +23,7 @@ author_profile: true
 </style>
 <img src="http://jinjinhe2001.github.io/images/painting/car1.jpg" >
 <div class="paintingsImgWrap">
+    <img src="http://jinjinhe2001.github.io/images/arts/carModel.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/3dv.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/anime1.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/c1.png" >
@@ -30,5 +31,6 @@ author_profile: true
     <img src="http://jinjinhe2001.github.io/images/painting/character-jump.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/character-stand.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/line.jpg" >
-    <img src="http://jinjinhe2001.github.io/images/painting/paint1.png" >
+    <img src="http://jinjinhe2001.github.io/images/painting/cups.png" >
+    <img src="http://jinjinhe2001.github.io/images/arts/cupsModel.png" >
 </div>
