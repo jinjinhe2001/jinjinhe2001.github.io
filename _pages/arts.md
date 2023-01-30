@@ -4,7 +4,7 @@ title: "Arts"
 permalink: /arts/
 author_profile: true
 ---
-<h1 class="page__title">Paintings</h1>
+<h1 class="page__title">Arts</h1>
 <p>
     I learnt about painting during the summer vacation after my high school graduation. Basically I studied about perspective, practised how to draw by auxiliary line, and designed pixel art by myself. What's more, I taught myself how to use Blender  and created some designs with it.
 </p>
