@@ -14,10 +14,10 @@ author_profile: true
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
+        gap: 20px;
     }
     .paintingsImgWrap img {
         max-width: 350px;
-        height: fit-content;
         min-width: 64px;
     }
 </style>
