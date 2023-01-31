@@ -51,17 +51,17 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.z = 10;
+				camera.position.z = 8;
 				camera.position.y = 200;
 
 				// scene
 
 				scene = new THREE.Scene();
 
-				const ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+				const ambientLight = new THREE.AmbientLight( 0xffffff, 0.3 );
 				scene.add( ambientLight );
 
-				const pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				const pointLight = new THREE.PointLight( 0xffffff, 0.7 );
 				camera.add( pointLight );
 				scene.add( camera );
 
@@ -70,8 +70,6 @@
 				function loadModel() {
 
 					object.traverse( function ( child ) {
-
-						if ( child.isMesh ) child.material.map = texture;
 
 					} );
 
@@ -84,8 +82,8 @@
 
 				// texture
 
-				const textureLoader = new THREE.TextureLoader( manager );
-				const texture = textureLoader.load( 'textures/uv_grid_opengl.jpg' );
+				// const textureLoader = new THREE.TextureLoader( manager );
+				// const texture = textureLoader.load( 'textures/uv_grid_opengl.jpg' );
 
 				// model
 

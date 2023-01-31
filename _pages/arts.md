@@ -23,6 +23,11 @@ author_profile: true
 </style>
 <img src="http://jinjinhe2001.github.io/images/painting/car1.jpg" >
 <div class="paintingsImgWrap">
+      <iframe src="https://jinjinhe2001.github.io/three.js-dev/examples/webgl_loader_obj.html"
+      height="350px"
+      width="100%"
+      frameborder="0">
+      </iframe>
     <img src="http://jinjinhe2001.github.io/images/arts/carModel.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/3dv.jpg" >
     <img src="http://jinjinhe2001.github.io/images/painting/anime1.jpg" >
