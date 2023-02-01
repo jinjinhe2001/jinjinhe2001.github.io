@@ -28,6 +28,7 @@ author_profile: true
       width="100%"
       frameborder="0">
       </iframe>
+    After rendering in Blender
     <img src="http://jinjinhe2001.github.io/images/arts/carModel.png" >
     <img src="http://jinjinhe2001.github.io/images/arts/cupsModel.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/cups.png" >
