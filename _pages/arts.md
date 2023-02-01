@@ -28,12 +28,12 @@ author_profile: true
     }
 </style>
 <img src="http://jinjinhe2001.github.io/images/painting/car1.jpg" >
-      <iframe src="https://jinjinhe2001.github.io/three.js-dev/examples/webgl_loader_obj.html"
+<iframe src="https://jinjinhe2001.github.io/three.js-dev/examples/webgl_loader_obj.html"
       height="350px"
       width="100%"
       frameborder="0">
-      </iframe>
-    <span id="blender">After rendering in Blender</span>
+</iframe>
+<span id="blender">After rendering in Blender</span>
 <div class="paintingsImgWrap">
     <img src="http://jinjinhe2001.github.io/images/arts/carModel.png" >
     <img src="http://jinjinhe2001.github.io/images/arts/cupsModel.png" >
