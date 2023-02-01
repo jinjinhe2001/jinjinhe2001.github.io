@@ -20,15 +20,21 @@ author_profile: true
         max-width: 350px;
         min-width: 64px;
     }
+    #blender{
+        display: inline-block;
+        width: 100%; 
+        margin: 0 auto; 
+        text-align: center;
+    }
 </style>
 <img src="http://jinjinhe2001.github.io/images/painting/car1.jpg" >
-<div class="paintingsImgWrap">
       <iframe src="https://jinjinhe2001.github.io/three.js-dev/examples/webgl_loader_obj.html"
       height="350px"
       width="100%"
       frameborder="0">
       </iframe>
-    After rendering in Blender<br>
+    <span id="blender">After rendering in Blender</span>
+<div class="paintingsImgWrap">
     <img src="http://jinjinhe2001.github.io/images/arts/carModel.png" >
     <img src="http://jinjinhe2001.github.io/images/arts/cupsModel.png" >
     <img src="http://jinjinhe2001.github.io/images/painting/cups.png" >
