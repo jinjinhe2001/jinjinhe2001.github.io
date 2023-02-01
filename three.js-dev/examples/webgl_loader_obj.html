@@ -10,6 +10,8 @@
 	<body>
 		<div id="info">
 		<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - model created with Blender
+		<br>
+		fly with WASD/RF/QE + mouse
 		</div>
 
 		<!-- Import maps polyfill -->
@@ -29,17 +31,20 @@
 			import * as THREE from 'three';
 
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
-
+			import { FlyControls } from './jsm/controls/FlyControls.js';
 			let container;
 
 			let camera, scene, renderer;
 
 			let mouseX = 0, mouseY = 0;
+			let controls;
 
 			let windowHalfX = window.innerWidth / 2;
 			let windowHalfY = window.innerHeight / 2;
 
 			let object;
+
+			const clock = new THREE.Clock();
 
 			init();
 			animate();
@@ -50,9 +55,9 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.z = 8;
-				camera.position.y = 200;
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 200 );
+				camera.position.z = 20;
+				camera.position.y = 2;
 
 				// scene
 
@@ -112,7 +117,16 @@
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.outputEncoding = THREE.sRGBEncoding;
 				container.appendChild( renderer.domElement );
+
+				controls = new FlyControls( camera, renderer.domElement );
+
+				controls.movementSpeed = 10;
+				controls.domElement = container;
+				controls.rollSpeed = Math.PI / 10;
+				controls.autoForward = false;
+				controls.dragToLook = false;
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove );
 
@@ -150,14 +164,31 @@
 
 			}
 
+			// function render() {
+
+			// 	camera.position.x += ( mouseX - camera.position.x ) * .05;
+			// 	camera.position.y += ( - mouseY - camera.position.y ) * .05;
+
+			// 	camera.lookAt( scene.position );
+
+			// 	renderer.render( scene, camera );
+
+			// }
+			// function animate() {
+
+			// requestAnimationFrame( animate );
+
+			// render();
+			// stats.update();
+
+			// }
+
 			function render() {
 
-				camera.position.x += ( mouseX - camera.position.x ) * .05;
-				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+			const delta = clock.getDelta();
 
-				camera.lookAt( scene.position );
-
-				renderer.render( scene, camera );
+			controls.update( delta );
+			renderer.render( scene, camera );
 
 			}
 
