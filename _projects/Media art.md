@@ -2,7 +2,7 @@
 title: "Media Art"
 collection: projects
 permalink: /projects/media-art
-excerpt: "In progress. Here are some of the projects I am working on for media art courses at UCSB. 1.sand simulation 2.solar system 3.flocking simulation <br/><img src='/images/MediaArt.png'>"
+excerpt: "In progress. Here are some of the projects I am working on for media art courses at UCSB. 1.sand simulation 2.solar system 3.flocking simulation 4. Karplus-Strong string <br/><img src='/images/MediaArt.png'>"
 date: 2023-01-15
 tag: 'graphics'
 ---
@@ -43,3 +43,7 @@ I created a 3D autonomous agent simulation with flocking. This system has some a
 <video width="100%" height="auto" controls>
     <source src="https://user-images.githubusercontent.com/72654824/216526465-cb2ca956-4ab0-403f-ada4-5a6627e535f8.mp4" type="video/mp4">
 </video>
+
+## Karplus-Strong string synthesis 
+I use the Karplus-Strong string synthesis algorithm to generate a plucked string sound.
+[Github](https://github.com/jinjinhe2001/MAT240B/tree/main/Assignment3/MAT-240B-2023-Karplus-Strong)
