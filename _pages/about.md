@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I am a fourth-year undergraduate student at Huazhong University of Science and Technology, and I'm currently spending my final year at UCSB as an exchange student in the Graduate Academic Preparation Program. 
+Hi! I am currently a Master student at Dartmouth College, majoring in Computer Science with concentration in Digital Arts, advised by Professor Bo Zhu in Visual Computing Lab.
+
+Before coming to Dartmouth, I received my Bachelor from Huazhong University of Science and Technology. And I spent a wonderful year at University of California, Santa Barbara for exchange study.
 
 Projects
 ======
