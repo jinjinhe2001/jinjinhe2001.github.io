@@ -12,10 +12,10 @@ Hi! I am currently a Master student at Dartmouth College, majoring in Computer S
 
 Before coming to Dartmouth, I received my Bachelor from Huazhong University of Science and Technology. And I spent a wonderful year at University of California, Santa Barbara for exchange study.
 
-Projects
+<!-- Projects
 ======
 
-{% include base_path %}
+{% include base_path %} -->
 
 <!-- {% for post in site.projects reversed %}
   {% include archive-single.html %}
