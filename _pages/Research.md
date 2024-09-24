@@ -4,6 +4,9 @@ title: "Research"
 permalink: /research/
 author_profile: true
 ---
+{% include base_path %}
+
+# Research
 <style type="text/css">
     #pubContainer{position:relative;}
     #paper{margin-top:20px;padding:10px;border-radius:5px;}
@@ -12,7 +15,6 @@ author_profile: true
     #paperinfo a{text-decoration:none;font-weight:700;}
     #abstract{position:relative;border-top:1px solid gray;width:694px;display:none;margin-top:-1px;padding:10px;background:#f0f0f0!important;border-bottom-left-radius:5px;border-bottom-right-radius:5px;font-size:14px;color:#222}
 </style>
-{% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->
 <!-- {% for post in site.research reversed %}
