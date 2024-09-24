@@ -38,11 +38,12 @@ Before coming to Dartmouth, I received my Bachelor from Huazhong University of S
   </div>
 </p>
 
-{% include base_path %} -->
 
 ## Projects
 I’ve worked on a range of projects, from computer graphics and game development to compilers and more. Check out [Projects](https://jinjinhe2001.github.io/projects/) to explore my work in detail.
 ![projects](/images/simulations.png)
+{% include base_path %}
+
 <!-- {% for post in site.projects reversed %}
   {% include archive-single.html %}
 {% endfor %} -->
