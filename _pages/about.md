@@ -18,7 +18,7 @@ Before coming to Dartmouth, I received my Bachelor from Huazhong University of S
   <div id='pubContainer'>
     <div id='paper'>
       <div>
-        <img id="paperimg" src="../projects/pfm-sfi-project-page/static/images/representative.jpg" alt="sfi"/>
+        <img id="paperimg" src="../files/diffmpu/image.jpg" alt="sfi"/>
       </div>
       <div id='paperinfo'>
         <b>Multi-level Partition of Unity on Differentiable Moving Particles</b><br />
