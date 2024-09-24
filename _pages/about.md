@@ -37,8 +37,6 @@ Before coming to Dartmouth, I received my Bachelor from Huazhong University of S
     </div>
   </div>
 </p>
-<!-- Projects
-======
 
 {% include base_path %} -->
 
