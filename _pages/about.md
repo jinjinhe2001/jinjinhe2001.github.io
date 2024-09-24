@@ -42,8 +42,8 @@ Before coming to Dartmouth, I received my Bachelor from Huazhong University of S
 
 {% include base_path %} -->
 
-<!-- {% for post in site.projects reversed %}
+{% for post in site.projects reversed %}
   {% include archive-single.html %}
-{% endfor %} -->
+{% endfor %}
 
 
