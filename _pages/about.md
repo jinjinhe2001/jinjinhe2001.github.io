@@ -29,7 +29,7 @@ Before coming to Dartmouth, I received my Bachelor from Huazhong University of S
       </div>
       <div id='paperinfo'>
         <b>Multi-level Partition of Unity on Differentiable Moving Particles</b><br />
-        <i>ACM Transactions on Graphics (SIGGRAPH ASIA 2024)</i><br />
+        <i>ACM Transactions on Graphics (SIGGRAPH Asia 2024)</i><br />
         <b>Jinjin He</b>, Taiyuan Zhang, Hiroki Kobayashi, Atsushi Kawamoto, Yuqing Zhou, Tsuyoshi Nomura, Bo Zhu<br />
         <a nonsmooth="1" href="../files/diffmpu/SASIA_2024__Particle_PU (5).pdf" class="">Paper</a>
         <a nonsmooth="1" href="https://jinjinhe2001.github.io/diffmpu-page/index.html" class="">Project Page</a>
