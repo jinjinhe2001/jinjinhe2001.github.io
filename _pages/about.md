@@ -15,7 +15,7 @@ redirect_from:
     #paperinfo a{text-decoration:none;font-weight:700;}
     #abstract{position:relative;border-top:1px solid gray;width:694px;display:none;margin-top:-1px;padding:10px;background:#f0f0f0!important;border-bottom-left-radius:5px;border-bottom-right-radius:5px;font-size:14px;color:#222}
 </style>
-Hi! I am currently a Master student at Dartmouth College, majoring in Computer Science with concentration in Digital Arts, advised by Professor Bo Zhu in Visual Computing Lab.
+Hi! I am currently a Master student at Dartmouth College, majoring in Computer Science with concentration in Digital Arts, advised by Prof. [Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/) in Visual Computing Lab.
 
 Before coming to Dartmouth, I received my Bachelor from Huazhong University of Science and Technology. And I spent a wonderful year at University of California, Santa Barbara for exchange study.
 
@@ -25,7 +25,7 @@ Before coming to Dartmouth, I received my Bachelor from Huazhong University of S
   <div id='pubContainer'>
     <div id='paper'>
       <div>
-        <img id="paperimg" src="../files/diffmpu/image.jpg" alt="diffmpu"/>
+        <img id="paperimg" src="../files/diffmpu/image.png" alt="diffmpu"/>
       </div>
       <div id='paperinfo'>
         <b>Multi-level Partition of Unity on Differentiable Moving Particles</b><br />
