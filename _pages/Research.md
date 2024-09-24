@@ -15,7 +15,7 @@ author_profile: true
   <div id='pubContainer'>
     <div id='paper'>
       <div>
-        <img id="paperimg" src="../files/diffmpu/image.jpg" alt="sfi"/>
+        <img id="paperimg" src="../files/diffmpu/image.jpg" alt="diffmpu"/>
       </div>
       <div id='paperinfo'>
         <b>Multi-level Partition of Unity on Differentiable Moving Particles</b><br />
