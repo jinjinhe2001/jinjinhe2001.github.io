@@ -30,6 +30,7 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
         <i>SIGGRAPH Asia 2025</i><br />
         Zhiqi Li*, <b>Jinjin He*</b>, Barnabás Börcsök, Taiyuan Zhang, Duowen Chen, Tao Du, Ming Lin, Greg Turk, Bo Zhu (* co-first author)<br />
         <a nonsmooth="1" href="../files/SIGA_2025__Differentiable_Flow_Map_Upload.pdf" class="">Paper</a>
+        <a nonsmooth="1" href="https://pearseven.github.io/DiffFMProject/" class="">Project Page</a>
       </div>
     </div>
   </div>
@@ -45,7 +46,7 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
         <i>ACM Transactions on Graphics (SIGGRAPH 2025)</i><br />
         Duowen Chen*, Zhiqi Li*, Taiyuan Zhang, <b>Jinjin He</b>, Junwei Zhou, Bart G van Bloemen Waanders, Bo Zhu(* co-first author)<br />
         <a nonsmooth="1" href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf" class="">Paper</a>
-        <a nonsmooth="1" href="https://cdwj.github.io/projects/compressible-flowmap-project-page/static/pdfs/SIG_2025__Compressible_Flow_Map_Upload.pdf" class="">Project Page</a>
+        <a nonsmooth="1" href="https://cdwj.github.io/projects/compressible-flowmap-project-page/index.html" class="">Project Page</a>
       </div>
     </div>
   </div>
