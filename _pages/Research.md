@@ -24,6 +24,22 @@ author_profile: true
   <div id='pubContainer'>
     <div id='paper'>
       <div>
+        <img id="paperimg" src="../images/PFMLS.jpg" alt="difffm"/>
+      </div>
+      <div id='paperinfo'>
+        <b>A Level Set Method on Particle Flow Maps</b><br />
+        <i>Arxiv</i><br />
+        Jinjin He, Taiyuan Zhang, Zhiqi Li, Junwei Zhou, Duowen Chen, Bo Zhu<br />
+        <a nonsmooth="1" href="https://arxiv.org/pdf/2601.09939" class="">Paper</a>
+        <!-- <a nonsmooth="1" href="https://pearseven.github.io/DiffFMProject/" class="">Project Page</a> -->
+      </div>
+    </div>
+  </div>
+</p>
+<p>
+  <div id='pubContainer'>
+    <div id='paper'>
+      <div>
         <img id="paperimg" src="../images/difffm.jpg" alt="difffm"/>
       </div>
       <div id='paperinfo'>
