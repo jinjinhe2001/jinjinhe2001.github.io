@@ -40,6 +40,22 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
   <div id='pubContainer'>
     <div id='paper'>
       <div>
+        <img id="paperimg" src="https://zhiqili-cg.github.io/publication_images/trajectory_consistency.png" alt="tcg"/>
+      </div>
+      <div id='paperinfo'>
+        <b>Trajectory Consistency for One-Step Generation on Euler Mean Flows</b><br />
+        <i>arXiv Preprint, 2026</i><br />
+        Zhiqi Li, Yuchen Sun, Duowen Chen, <b>Jinjin He</b>, Bo Zhu<br />
+        <a nonsmooth="1" href="https://arxiv.org/pdf/2602.02571" class="">Paper</a>
+      </div>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div id='pubContainer'>
+    <div id='paper'>
+      <div>
         <img id="paperimg" src="../images/PFMLS2.jpg" alt="difffm"/>
       </div>
       <div id='paperinfo'>
