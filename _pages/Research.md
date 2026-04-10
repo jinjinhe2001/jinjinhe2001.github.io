@@ -24,6 +24,23 @@ author_profile: true
   <div id='pubContainer'>
     <div id='paper'>
       <div>
+        <img id="paperimg" src="../images/OGPP.png" alt="ogpp"/>
+      </div>
+      <div id='paperinfo'>
+        <b>Generative Modeling with Orbit-Space Particle Flow Matching</b><br />
+        <i>SIGGRAPH 2026 (ACM Transactions on Graphics)</i><br />
+        Sinan Wang*, <b>Jinjin He</b>*, Shenyifan Lu, Ruicheng Wang, Greg Turk, Bo Zhu<br />
+        <span style="color: gray;">Paper (Coming Soon)</span>
+        <!-- <a nonsmooth="1" href="" class="">Project Page</a> -->
+      </div>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div id='pubContainer'>
+    <div id='paper'>
+      <div>
         <img id="paperimg" src="../images/PFMLS.jpg" alt="difffm"/>
       </div>
       <div id='paperinfo'>
