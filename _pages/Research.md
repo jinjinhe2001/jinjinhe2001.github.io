@@ -48,6 +48,7 @@ author_profile: true
         <i>ICML 2026</i><br />
         Zhiqi Li, Yuchen Sun, Duowen Chen, <b>Jinjin He</b>, Bo Zhu<br />
         <a nonsmooth="1" href="https://arxiv.org/pdf/2602.02571" class="">Paper</a>
+        <a nonsmooth="1" href="https://zhiqili-cg.github.io/EulerMeanFlow_project/" class="">Project Page</a>
       </div>
     </div>
   </div>
