@@ -24,24 +24,7 @@ author_profile: true
   <div id='pubContainer'>
     <div id='paper'>
       <div>
-        <img id="paperimg" src="../images/OGPP.png" alt="ogpp"/>
-      </div>
-      <div id='paperinfo'>
-        <b>Generative Modeling with Orbit-Space Particle Flow Matching</b><br />
-        <i>SIGGRAPH 2026 (ACM Transactions on Graphics)</i><br />
-        Sinan Wang*, <b>Jinjin He</b>*, Shenyifan Lu, Ruicheng Wang, Greg Turk, Bo Zhu(* co-first author)<br />
-        <a nonsmooth="1" href="../files/OGPP.pdf" class="">Paper</a>
-        <!-- <a nonsmooth="1" href="" class="">Project Page</a> -->
-      </div>
-    </div>
-  </div>
-</p>
-
-<p>
-  <div id='pubContainer'>
-    <div id='paper'>
-      <div>
-        <img id="paperimg" src="../hermite-ngp/static/figures/arma_teaser_compare.png" alt="hermite-ngp"/>
+        <img id="paperimg" src="../hermite-ngp/static/figures/illustration_workflow.png" alt="hermite-ngp"/>
       </div>
       <div id='paperinfo'>
         <b>Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs</b><br />
@@ -67,6 +50,23 @@ author_profile: true
         Zhiqi Li, Yuchen Sun, Duowen Chen, <b>Jinjin He</b>, Bo Zhu<br />
         <a nonsmooth="1" href="https://arxiv.org/pdf/2602.02571" class="">Paper</a>
         <a nonsmooth="1" href="https://zhiqili-cg.github.io/EulerMeanFlow_project/" class="">Project Page</a>
+      </div>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div id='pubContainer'>
+    <div id='paper'>
+      <div>
+        <img id="paperimg" src="../images/OGPP.png" alt="ogpp"/>
+      </div>
+      <div id='paperinfo'>
+        <b>Generative Modeling with Orbit-Space Particle Flow Matching</b><br />
+        <i>SIGGRAPH 2026 (ACM Transactions on Graphics)</i><br />
+        Sinan Wang*, <b>Jinjin He</b>*, Shenyifan Lu, Ruicheng Wang, Greg Turk, Bo Zhu(* co-first author)<br />
+        <a nonsmooth="1" href="../files/OGPP.pdf" class="">Paper</a>
+        <!-- <a nonsmooth="1" href="" class="">Project Page</a> -->
       </div>
     </div>
   </div>
