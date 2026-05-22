@@ -41,6 +41,24 @@ author_profile: true
   <div id='pubContainer'>
     <div id='paper'>
       <div>
+        <img id="paperimg" src="../hermite-ngp/static/figures/arma_teaser_compare.png" alt="hermite-ngp"/>
+      </div>
+      <div id='paperinfo'>
+        <b>Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs</b><br />
+        <i>ICML 2026</i><br />
+        <b>Jinjin He</b>, Zhiqi Li, Sinan Wang, Bo Zhu<br />
+        <!-- TODO: replace # with the final paper PDF URL once posted -->
+        <a nonsmooth="1" href="#" class="">Paper</a>
+        <a nonsmooth="1" href="../hermite-ngp/" class="">Project Page</a>
+      </div>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div id='pubContainer'>
+    <div id='paper'>
+      <div>
         <img id="paperimg" src="https://zhiqili-cg.github.io/publication_images/trajectory_consistency.png" alt="tcg"/>
       </div>
       <div id='paperinfo'>
