@@ -23,7 +23,7 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
   <div id='pubContainer'>
     <div id='paper'>
       <div>
-        <img id="paperimg" src="../hermite-ngp/static/figures/arma_teaser_ours.png" alt="hermite-ngp"/>
+        <img id="paperimg" src="../hermite-ngp/static/figures/arma_teaser_compare.png" alt="hermite-ngp"/>
       </div>
       <div id='paperinfo'>
         <b>Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs</b><br />
