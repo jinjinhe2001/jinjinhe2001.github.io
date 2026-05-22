@@ -15,7 +15,7 @@ redirect_from:
     #paperinfo a{text-decoration:none;font-weight:700;}
     #abstract{position:relative;border-top:1px solid gray;width:694px;display:none;margin-top:-1px;padding:10px;background:#f0f0f0!important;border-bottom-left-radius:5px;border-bottom-right-radius:5px;font-size:14px;color:#222}
 </style>
-Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science, advised by Prof. [Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/) in Visual Computing Lab.
+Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science, advised by Prof. [Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/) in Computer Graphics Lab.
 
 
 ## Research 
