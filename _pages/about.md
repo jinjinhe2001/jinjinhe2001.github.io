@@ -65,7 +65,7 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
         <i>SIGGRAPH 2026 (ACM Transactions on Graphics)</i><br />
         Sinan Wang*, <b>Jinjin He</b>*, Shenyifan Lu, Ruicheng Wang, Greg Turk, Bo Zhu(* co-first author)<br />
         <a nonsmooth="1" href="../files/OGPP.pdf" class="">Paper</a>
-        <!-- <a nonsmooth="1" href="" class="">Project Page</a> -->
+        <a nonsmooth="1" href="https://ogpp.sinanw.com/" class="">Project Page</a>
       </div>
     </div>
   </div>
