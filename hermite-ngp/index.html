@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs">
+  <meta name="description" content="A multi-resolution hash encoding that stores values and mixed partial derivatives at grid vertices, enabling analytic gradients, Jacobians, and Hessians for neural PDE solvers.">
+  <meta name="keywords" content="Hermite-NGP, hash encoding, neural PDE, PINN, physics-informed neural networks, Hermite interpolation, multi-resolution, ICML 2026">
+  <meta name="author" content="Jinjin He, Zhiqi Li, Sinan Wang, Bo Zhu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Georgia Institute of Technology">
+  <meta property="og:title" content="Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs">
+  <meta property="og:description" content="A multi-resolution hash encoding that stores values and mixed partial derivatives at grid vertices, enabling analytic gradients, Jacobians, and Hessians for neural PDE solvers.">
+  <!-- TODO: Update with final hosted URL once deployed -->
+  <meta property="og:url" content="https://jinjinhe2001.github.io/hermite-ngp/">
+  <meta property="og:image" content="https://jinjinhe2001.github.io/hermite-ngp/static/figures/arma_teaser_compare.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:alt" content="Hermite-NGP teaser figure">
+  <meta property="article:published_time" content="2026-05-20T00:00:00.000Z">
+  <meta property="article:author" content="Jinjin He">
+  <meta property="article:section" content="Research">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs">
+  <meta name="twitter:description" content="A multi-resolution hash encoding that stores values and mixed partial derivatives at grid vertices, enabling analytic gradients, Jacobians, and Hessians for neural PDE solvers.">
+  <meta name="twitter:image" content="https://jinjinhe2001.github.io/hermite-ngp/static/figures/arma_teaser_compare.png">
+
+  <!-- Academic / Citation -->
+  <meta name="citation_title" content="Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs">
+  <meta name="citation_author" content="He, Jinjin">
+  <meta name="citation_author" content="Li, Zhiqi">
+  <meta name="citation_author" content="Wang, Sinan">
+  <meta name="citation_author" content="Zhu, Bo">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="International Conference on Machine Learning (ICML) 2026">
+  <!-- TODO: replace with hosted PDF URL once posted -->
+  <meta name="citation_pdf_url" content="https://jinjinhe2001.github.io/hermite-ngp/static/pdfs/paper.pdf">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- MathJax for inline math in captions -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]] },
+      options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs",
+    "description": "A multi-resolution hash encoding that stores values and mixed partial derivatives at grid vertices, enabling analytic gradients, Jacobians, and Hessians for neural PDE solvers.",
+    "author": [
+      { "@type": "Person", "name": "Jinjin He",  "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } },
+      { "@type": "Person", "name": "Zhiqi Li",   "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } },
+      { "@type": "Person", "name": "Sinan Wang", "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } },
+      { "@type": "Person", "name": "Bo Zhu",     "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } }
+    ],
+    "datePublished": "2026-05-20",
+    "publisher": { "@type": "Organization", "name": "International Conference on Machine Learning (ICML)" },
+    "url": "https://jinjinhe2001.github.io/hermite-ngp/",
+    "keywords": ["hash encoding", "Hermite interpolation", "neural PDE", "physics-informed neural networks", "ICML 2026"],
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+  </script>
+
+  <style>
+    /* Figure block: image + caption */
+    .figure-block { margin: 2.2rem auto; max-width: 960px; }
+    .figure-block img { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .figure-block .figure-caption { margin-top: 0.6rem; font-size: 0.95rem; color: #444; line-height: 1.5; text-align: justify; }
+    .figure-block .figure-caption strong { color: #111; }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+
+              <h1 class="title is-1 publication-title">
+                Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://jinjinhe2001.github.io/" target="_blank">Jinjin He</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://zhiqili-cg.github.io/" target="_blank">Zhiqi Li</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://sinanw.com/" target="_blank">Sinan Wang</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://faculty.cc.gatech.edu/~bozhu/" target="_blank">Bo Zhu</a>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Georgia Institute of Technology</span>
+                <br>
+                <span class="author-block"><strong>ICML 2026</strong></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+
+                  <!-- TODO: replace with arXiv PDF link once posted -->
+                  <span class="link-block">
+                    <a href="#" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: replace with arXiv abstract link -->
+                  <span class="link-block">
+                    <a href="#" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+
+                  <!-- TODO: replace with GitHub repo link -->
+                  <span class="link-block">
+                    <a href="#" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End hero -->
+
+
+    <!-- Teaser (Fig. 1) -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="figure-block">
+            <img src="static/figures/arma_teaser_compare.png" alt="SDF Gradients and Curvature on Armadillo">
+            <div class="figure-caption">
+              <strong>Figure 1 &mdash; SDF Gradients and Curvature on Armadillo.</strong>
+              Our method (left) recovers smoother gradient and curvature fields than NeuralAngelo (right), used here as
+              an FD-based hash-encoding baseline under the same SDF + gradient objective. Gradients are visualized as
+              green line segments around the surface, while curvature is shown via mesh coloring.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser -->
+
+
+    <!-- Abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                We propose <em>Hermite-NGP</em>, a gradient-augmented multi-resolution hash encoding designed to enable
+                fast and accurate computation of spatial derivatives for neural PDE solvers. Unlike existing NGP-based
+                approaches that rely on automatic differentiation or finite differences and suffer from instability or
+                high cost, Hermite-NGP explicitly stores function values and mixed partial derivatives at hash grid
+                vertices, allowing fully analytic evaluation of gradients, Jacobians, and Hessians via Hermite
+                interpolation. This design preserves the efficiency and spatial adaptivity of NGP while supporting
+                analytic differential operators up to second order. We further introduce a multi-resolution curriculum
+                training strategy analogous to multigrid V-cycles to enable coarse-to-fine optimization. Across a range
+                of 2D and 3D PDE benchmarks, Hermite-NGP achieves up to ~20&times; lower error than prior
+                neural PDE methods, and reduces wall-clock convergence time by 2&ndash;10&times; compared to other
+                solvers, with per-epoch training times as low as 3.5&nbsp;ms for models with up to 17M parameters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End abstract -->
+
+
+    <!-- Method (Fig. 2 + Fig. 3) -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+
+        <div class="figure-block">
+          <img src="static/figures/illustration_workflow.png" alt="Hermite-NGP workflow diagram">
+          <div class="figure-caption">
+            <strong>Figure 2 &mdash; Hermite-NGP Workflow.</strong>
+            Multi-resolution grids store Hermite coefficients $(f, f_x, f_y, f_{xy})$ in separate hash tables with sizes
+            $T_1$ (values), $T_2$ (first derivatives), and $T_3$ (mixed derivatives), producing encoding
+            $\gamma, \nabla\gamma, \nabla^2\gamma$. The MLP outputs $u$, $\partial u/\partial\gamma$,
+            $\partial^2 u/\partial\gamma^2$, combined via chain rule to yield $\nabla u, \nabla^2 u$ for the PDE loss.
+          </div>
+        </div>
+
+        <div class="figure-block">
+          <img src="static/figures/illustration.png" alt="Gradient-augmented interpolation illustration">
+          <div class="figure-caption">
+            <strong>Figure 3 &mdash; Gradient-Augmented Illustration.</strong>
+            The left cell without gradients yields constant interpolation, while the others use gradients to produce
+            rich sub-grid features.
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End method -->
+
+
+    <!-- Results in document order -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+
+        <!-- 3D Helmholtz (Fig. 4 in document order) -->
+        <div class="figure-block">
+          <img src="static/figures/helm_3d_a10.png" alt="Helmholtz 3D solution slices">
+          <div class="figure-caption">
+            <strong>Figure 4 &mdash; Helmholtz 3D ($a{=}10$).</strong>
+            Cross-sectional slices of the 3D Helmholtz solution. Hermite-NGP accurately captures the oscillatory wave
+            patterns, achieving an $L^2$ error of $6\times10^{-3}$, substantially better than the closest baseline,
+            I-NGP-FD ($7.21\times10^{-2}$).
+          </div>
+        </div>
+
+        <!-- 1+1D Convection (Fig. 5) -->
+        <div class="figure-block">
+          <img src="static/figures/convection.png" alt="1+1D convection solution at final time">
+          <div class="figure-caption">
+            <strong>Figure 5 &mdash; Convection 1+1D ($c=30$).</strong>
+            Solution field at final time. Hermite-NGP preserves the sharp traveling wave with
+            $L^2 = 8.49\times10^{-5}$, a 10&times; improvement over PirateNet ($8.54\times10^{-4}$); SPINN and INGP-FD
+            failed to converge.
+          </div>
+        </div>
+
+        <!-- Helmholtz 2D a=10 (Fig. 6) -->
+        <div class="figure-block">
+          <img src="static/figures/comparison_notitle_a10_fixbar_onlyours_gt_high.png"
+               alt="Helmholtz 2D a=10: ground truth, prediction, pointwise error">
+          <div class="figure-caption">
+            <strong>Figure 6 &mdash; Helmholtz 2D ($a=10$).</strong>
+            Ground truth (left), Hermite-NGP prediction (middle), and pointwise error (right). Our method achieves
+            relative $L^2$ error of $1.81\times10^{-5}$, compared to $3.57\times10^{-4}$ for the closest baseline.
+          </div>
+        </div>
+
+        <!-- Helmholtz 2D a=100 enlarged (Fig. 7) -->
+        <div class="figure-block">
+          <img src="static/figures/helm_2D_enlarge.png" alt="Helmholtz 2D a=100 enlarged">
+          <div class="figure-caption">
+            <strong>Figure 7 &mdash; Helmholtz 2D ($a=100$) enlarged.</strong>
+            Hermite-NGP is the only method that converges on this challenging high-frequency setting, achieving
+            $L^2 = 4.59\times10^{-2}$. All baseline methods fail to capture the rapid oscillations.
+          </div>
+        </div>
+
+        <!-- Loss curves (Fig. 8) -->
+        <div class="figure-block">
+          <img src="static/figures/loss_curves_22.png" alt="Training loss curves across benchmarks">
+          <div class="figure-caption">
+            <strong>Figure 8 &mdash; Training loss curves across four benchmarks.</strong>
+            Our method&rsquo;s loss curve decreases smoothly, in contrast to the highly oscillatory behavior of the
+            baselines, and converges to errors up to <strong>four orders of magnitude</strong> lower across different
+            benchmarks.
+          </div>
+        </div>
+
+        <!-- Additional baselines on Helmholtz a=10 (Fig. 9) -->
+        <div class="figure-block">
+          <img src="static/figures/helmholtz_a10_comparison.png"
+               alt="Helmholtz 2D a=10 comparison across Hermite-NGP, partial-infinity Grid, SIREN">
+          <div class="figure-caption">
+            <strong>Figure 9 &mdash; Helmholtz 2D ($a{=}10$) qualitative comparison.</strong>
+            Across Hermite-NGP, $\partial^\infty$-Grid, and SIREN, only Hermite-NGP recovers the high-frequency
+            structure cleanly.
+          </div>
+        </div>
+
+        <!-- Taylor-Green vortex (Fig. 10) -->
+        <div class="figure-block">
+          <img src="static/figures/comparison_nu0.01_colorbar.png"
+               alt="Taylor-Green vortex velocity magnitude at t=1">
+          <div class="figure-caption">
+            <strong>Figure 10 &mdash; Taylor&ndash;Green vortex ($\nu=0.01$).</strong>
+            Velocity magnitude at $t=1$. Hermite-NGP captures the decaying vortex structure with
+            $L^2 = 7.71\times10^{-5}$, outperforming PIG by 9&times;.
+          </div>
+        </div>
+
+        <!-- Flow mixing (Fig. 11) -->
+        <div class="figure-block">
+          <img src="static/figures/flowmixing_ours.png" alt="Flow mixing solution field">
+          <div class="figure-caption">
+            <strong>Figure 11 &mdash; Flow Mixing.</strong>
+            Solution field showing rotational transport. Hermite-NGP achieves $L^2 = 2.35\times10^{-4}$,
+            resolving sharp gradients from fluid stretching.
+          </div>
+        </div>
+
+        <!-- SDF learning curvature (Fig. 12) -->
+        <div class="figure-block">
+          <img src="static/figures/dragon_sdf_curvature_zoom.png" alt="SDF learning curvature on Dragon">
+          <div class="figure-caption">
+            <strong>Figure 12 &mdash; SDF Learning and Curvature Estimation.</strong>
+            Hermite-NGP learns an SDF whose gradients (green line segments) and curvature (shown as color) remain
+            smooth thanks to analytic second derivatives, whereas NeuralAngelo&rsquo;s finite-difference curvature is
+            noisy and exhibits visible artifacts.
+          </div>
+        </div>
+
+        <!-- Image reconstruction (Fig. 13) -->
+        <div class="figure-block">
+          <img src="static/figures/image_recon_comparison.png" alt="Image reconstruction from gradient supervision">
+          <div class="figure-caption">
+            <strong>Figure 13 &mdash; Image Reconstruction from Gradient Supervision.</strong>
+            On the <code>camera</code> image, Hermite-NGP recovers sharper edges and finer texture than
+            $\partial^\infty$-Grid and SIREN while matching their soft-region quality.
+          </div>
+        </div>
+
+        <!-- 3D Poisson on Armadillo (Fig. 14) -->
+        <div class="figure-block">
+          <img src="static/figures/arma_poisson_zoom.png" alt="3D Poisson solution on Armadillo">
+          <div class="figure-caption">
+            <strong>Figure 14 &mdash; 3D Poisson with Mesh Boundary (Armadillo).</strong>
+            Solution $u$ with Dirichlet values $u{=}1$ on the mesh surface and $u{=}0$ on the outer domain boundary.
+            Hermite-NGP achieves an $L^2$ error of $5\times10^{-3}$, a 3&times; improvement over PIG. The third row
+            shows $L^2$ error.
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End results -->
+
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+<pre id="bibtex-code"><code>@inproceedings{he2026hermitengp,
+  title     = {Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs},
+  author    = {He, Jinjin and Li, Zhiqi and Wang, Sinan and Zhu, Bo},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </section>
+    <!-- End BibTeX -->
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content has-text-centered">
+              <p>
+                &copy; 2026 Jinjin He.
+                Back to <a href="https://jinjinhe2001.github.io/" target="_blank">Jinjin&nbsp;He's homepage</a>.
+              </p>
+              <p>
+                This page was built using the
+                <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
+                adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                Licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC&nbsp;BY-SA&nbsp;4.0</a> license.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
