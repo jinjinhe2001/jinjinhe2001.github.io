@@ -30,7 +30,7 @@ author_profile: true
         <b>Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs</b><br />
         <i>ICML 2026</i><br />
         <b>Jinjin He</b>, Zhiqi Li, Sinan Wang, Bo Zhu<br />
-        <a nonsmooth="1" href="https://openreview.net/pdf?id=YJsolh0zg1" class="">Paper</a>
+        <a nonsmooth="1" href="https://jinjinhe2001.github.io/hermite-ngp/static/pdfs/paper.pdf" class="">Paper</a>
         <a nonsmooth="1" href="../hermite-ngp/" class="">Project Page</a>
       </div>
     </div>
