@@ -23,11 +23,28 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
   <div id='pubContainer'>
     <div id='paper'>
       <div>
+        <img id="paperimg" src="../images/two-phase-pfm.webp" alt="two-phase-pfm"/>
+      </div>
+      <div id='paperinfo'>
+        <b>Two-phase Impulse Fluid on Particle Flow Map</b><br />
+        <i>IEEE Transactions on Visualization and Computer Graphics (TVCG 2026)</i><br />
+        Hui Wang, <b>Jinjin He</b>, Xubo Yang<br />
+        <a nonsmooth="1" href="https://doi.ieeecomputersociety.org/10.1109/TVCG.2026.3709951" class="">Paper</a>
+        <a nonsmooth="1" href="https://two-phase-pfm.github.io/" class="">Project Page</a>
+      </div>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div id='pubContainer'>
+    <div id='paper'>
+      <div>
         <img id="paperimg" src="../hermite-ngp/static/figures/arma_teaser_compare.png" alt="hermite-ngp"/>
       </div>
       <div id='paperinfo'>
         <b>Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs</b><br />
-        <i>ICML 2026</i><br />
+        <i>International Conference on Machine Learning (ICML 2026)</i><br />
         <b>Jinjin He</b>, Zhiqi Li, Sinan Wang, Bo Zhu<br />
         <a nonsmooth="1" href="https://jinjinhe2001.github.io/hermite-ngp/static/pdfs/paper.pdf" class="">Paper</a>
         <a nonsmooth="1" href="../hermite-ngp/" class="">Project Page</a>
@@ -44,7 +61,7 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
       </div>
       <div id='paperinfo'>
         <b>Trajectory Consistency for One-Step Generation on Euler Mean Flows</b><br />
-        <i>ICML 2026</i><br />
+        <i>International Conference on Machine Learning (ICML 2026)</i><br />
         Zhiqi Li, Yuchen Sun, Duowen Chen, <b>Jinjin He</b>, Bo Zhu<br />
         <a nonsmooth="1" href="https://arxiv.org/pdf/2602.02571" class="">Paper</a>
         <a nonsmooth="1" href="https://zhiqili-cg.github.io/EulerMeanFlow_project/" class="">Project Page</a>
