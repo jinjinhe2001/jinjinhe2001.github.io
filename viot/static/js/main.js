@@ -6,7 +6,7 @@ let paused = motionPreference.matches;
 
 function updateAnimation() {
   stillSource.media = paused ? 'all' : 'not all';
-  poemImage.src = paused ? 'static/images/poem-poster.webp' : 'static/images/chunjiang-long.gif';
+  poemImage.src = paused ? 'static/images/poem-fig9-poster.webp' : 'static/images/chunjiang-fig9.gif';
   animationToggle.textContent = paused ? 'Play animation' : 'Pause animation';
 }
 
