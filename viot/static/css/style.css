@@ -64,6 +64,15 @@ h2 { margin: 0 0 22px; font-size: 28px; font-weight: 650; letter-spacing: -.025e
 .figure-section figure > a { display: block; }
 .figure-section img { width: 100%; }
 .figure-section figcaption { max-width: 920px; margin: 20px auto 0; font-size: 15px; line-height: 1.65; color: var(--muted); }
+.result-gallery h2 { margin-bottom: 12px; }
+.gallery-intro { max-width: 700px; margin: 0 auto 40px; color: var(--muted); text-align: center; font-size: 15px; }
+.result-panel + .result-panel { margin-top: 48px; }
+.result-panel h3 { margin: 0 0 18px; font-size: 22px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.result-panel figure > a { cursor: zoom-in; }
+.result-panel figure > a + a { margin-top: 12px; }
+.result-panel img { border-radius: 4px; }
+.result-panel--split figure { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 36px; align-items: center; }
+.result-panel--split figcaption { margin: 0; }
 .citation-section { scroll-margin-top: 30px; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
 pre { margin: 0; padding: 24px; overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #f7f7fa; font-size: 13px; line-height: 1.7; tab-size: 2; }
@@ -82,6 +91,11 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15
   .poem { font-size: 29px; }
   .text-section { margin: 35px auto 45px; }
   .figure-section { padding-top: 32px; margin-bottom: 30px; }
+  .gallery-intro { margin-bottom: 30px; }
+  .result-panel + .result-panel { margin-top: 36px; }
+  .result-panel h3 { font-size: 20px; }
+  .result-panel--split figure { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .result-panel--split figure > a { width: min(100%, 560px); margin-inline: auto; }
   h2 { font-size: 25px; }
   pre { padding: 17px; font-size: 12px; }
 }

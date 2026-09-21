@@ -1,6 +1,27 @@
 <link rel="stylesheet" href="{{ '/assets/css/publications.css' | relative_url }}">
 <div class="publications">
   <article class="publication">
+    <a class="publication__preview-pair" href="{{ '/viot/' | relative_url }}" aria-label="View the VIOT project page">
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="{{ '/viot/static/images/poem-poster.webp' | relative_url }}">
+        <img src="{{ '/viot/static/images/poem-preview.webp' | relative_url }}" alt="Chinese poem transported by the VIOT incompressible flow operator" loading="lazy" decoding="async" width="256" height="256">
+      </picture>
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="{{ '/viot/static/images/transport-poster.webp' | relative_url }}">
+        <img src="{{ '/viot/static/images/transport-preview.webp' | relative_url }}" alt="3D volumetric letters transported through G, R, A, P, and H" loading="lazy" decoding="async" width="256" height="256">
+      </picture>
+    </a>
+    <div class="publication__info">
+      <b class="publication__title">A Variational Optimal Transport Operator on Incompressible Flow</b>
+      <i class="publication__venue">arXiv preprint, 2026</i>
+      <span class="publication__authors"><b>Jinjin He</b>, Shenyifan Lu, Sinan Wang, Zhiqi Li, Duowen Chen, and Bo Zhu</span>
+      <div class="publication__links">
+        <a href="https://arxiv.org/pdf/2609.13729">Paper</a>
+        <a href="{{ '/viot/' | relative_url }}">Project Page</a>
+      </div>
+    </div>
+  </article>
+  <article class="publication">
     <img class="publication__image" src="{{ '/images/hamiltonian-waves.jpg' | relative_url }}" alt="Coupled nonlinear surface waves and three-dimensional fluid flow" loading="lazy" decoding="async" width="660" height="371">
     <div class="publication__info">
       <b class="publication__title">Hamiltonian Two-Way Coupling of Nonlinear Waves and 3D Flows</b>
@@ -20,18 +41,6 @@
       <b class="publication__title">Unified Long-Short Flow Maps for Fast Generation</b>
       <i class="publication__venue">SIGGRAPH Asia 2026 Conference Papers, to appear</i>
       <span class="publication__authors">Zhiqi Li, <b>Jinjin He</b>, Duowen Chen, Ruicheng Wang, Shenyifan Lu, Yuxuan Liao, Yuchen Sun, Sinan Wang, and Bo Zhu</span>
-    </div>
-  </article>
-  <article class="publication">
-    <img class="publication__image" src="{{ '/viot/static/images/poem-preview.webp' | relative_url }}" alt="Chinese poem transported by the VIOT incompressible flow operator" loading="lazy" decoding="async" width="256" height="256">
-    <div class="publication__info">
-      <b class="publication__title">A Variational Optimal Transport Operator on Incompressible Flow</b>
-      <i class="publication__venue">arXiv preprint, 2026</i>
-      <span class="publication__authors"><b>Jinjin He</b>, Shenyifan Lu, Sinan Wang, Zhiqi Li, Duowen Chen, and Bo Zhu</span>
-      <div class="publication__links">
-        <a href="https://arxiv.org/pdf/2609.13729">Paper</a>
-        <a href="{{ '/viot/' | relative_url }}">Project Page</a>
-      </div>
     </div>
   </article>
   <article class="publication">

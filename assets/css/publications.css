@@ -21,6 +21,29 @@
   border-radius: 3px;
 }
 
+.publication__preview-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 200px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #000;
+}
+
+.publication__preview-pair picture {
+  display: block;
+  min-width: 0;
+}
+
+.publication__preview-pair img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
 .publication__title,
 .publication__venue,
 .publication__authors {
@@ -51,7 +74,8 @@
     padding: 10px 0;
   }
 
-  .publication__image {
+  .publication__image,
+  .publication__preview-pair {
     width: 260px;
   }
 }
