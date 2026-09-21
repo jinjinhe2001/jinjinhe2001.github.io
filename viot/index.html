@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Variational Optimal Transport Operator on Incompressible Flow</title>
+  <meta name="description" content="VIOT is a generative neural operator for incompressible density transport, producing 2D and 3D transport trajectories in seconds for new source-target pairs.">
+  <meta name="author" content="Jinjin He, Shenyifan Lu, Sinan Wang, Zhiqi Li, Duowen Chen, Bo Zhu">
+  <link rel="canonical" href="https://jinjinhe2001.github.io/viot/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Variational Optimal Transport Operator on Incompressible Flow">
+  <meta property="og:description" content="Generative neural operators for incompressible density transport in 2D and 3D.">
+  <meta property="og:url" content="https://jinjinhe2001.github.io/viot/">
+  <meta property="og:image" content="https://jinjinhe2001.github.io/viot/static/images/poem-poster.webp">
+  <meta property="og:image:alt" content="A Chinese character formed by incompressible fluid transport">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="citation_title" content="A Variational Optimal Transport Operator on Incompressible Flow">
+  <meta name="citation_author" content="He, Jinjin">
+  <meta name="citation_author" content="Lu, Shenyifan">
+  <meta name="citation_author" content="Wang, Sinan">
+  <meta name="citation_author" content="Li, Zhiqi">
+  <meta name="citation_author" content="Chen, Duowen">
+  <meta name="citation_author" content="Zhu, Bo">
+  <meta name="citation_publication_date" content="2026/09/12">
+  <meta name="citation_arxiv_id" content="2609.13729">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2609.13729">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="../">Jinjin He</a>
+    <a href="../research/">All research <span aria-hidden="true">↗</span></a>
+  </nav>
+
+  <main>
+    <header class="project-header">
+      <p class="eyebrow">VIOT · arXiv 2026</p>
+      <h1>A Variational Optimal Transport Operator on Incompressible Flow</h1>
+      <div class="authors">
+        <a href="../">Jinjin He</a>,
+        <span>Shenyifan Lu</span>,
+        <a href="https://sinanw.com/">Sinan Wang</a>,
+        <a href="https://zhiqili-cg.github.io/">Zhiqi Li</a>,
+        <a href="https://cdwj.github.io/">Duowen Chen</a>,
+        <a href="https://faculty.cc.gatech.edu/~bozhu/">Bo Zhu</a>
+      </div>
+      <p class="affiliation">Georgia Institute of Technology</p>
+      <div class="resource-links">
+        <a class="button button-primary" href="https://arxiv.org/pdf/2609.13729">Paper <span aria-hidden="true">↗</span></a>
+        <a class="button" href="https://arxiv.org/abs/2609.13729">arXiv</a>
+        <a class="button" href="#bibtex">BibTeX</a>
+      </div>
+    </header>
+
+    <figure class="poem-figure" aria-labelledby="poem-caption">
+      <div class="poem-animation">
+        <picture>
+          <source id="poem-still" media="(prefers-reduced-motion: reduce)" srcset="static/images/poem-poster.webp" type="image/webp">
+          <source srcset="static/images/chunjiang-long.webp" type="image/webp">
+          <img id="poem-image" src="static/images/chunjiang-long.gif" width="512" height="512" alt="Fluid sequentially forms the fourteen characters of the opening couplet of 春江花月夜." fetchpriority="high">
+        </picture>
+      </div>
+      <figcaption id="poem-caption">
+        <p class="eyebrow">Incompressible transport · Chinese poetry</p>
+        <h2>Poetry in motion</h2>
+        <p class="poem" lang="zh-Hans">春江潮水连海平，<br>海上明月共潮生。</p>
+        <p class="poem-credit">Zhang Ruoxu · <cite>A Moonlit Night on the Spring River</cite></p>
+        <p>A single trained operator transports density through the opening couplet, forming each character through a continuous sequence of fluid motion.</p>
+        <div class="animation-controls">
+          <button class="text-button" id="animation-toggle" type="button" hidden>Pause animation</button>
+          <a href="static/images/chunjiang-long.gif">Full GIF <span aria-hidden="true">↗</span></a>
+        </div>
+      </figcaption>
+    </figure>
+
+    <section class="text-section" aria-labelledby="abstract-title">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>We present the Variational Incompressible Optimal Transport (VIOT) operator, a generative neural operator for amortized incompressible density transport. Given a new source-target density pair, VIOT predicts a divergence-free velocity field and generates the full transport trajectory by feed-forward inference, replacing the hour-scale per-pair optimization used by adjoint fluid solvers and differentiable simulation baselines.</p>
+      <p>The system consists of three components: a stream-function or vector-potential representation that enforces incompressibility by construction, a regularized incompressible transport objective that balances endpoint accuracy and flow smoothness, and a Fourier Neural Operator backbone that amortizes the solve across new pairs and grid resolutions. Together, these components make incompressible transport a reusable neural operator that facilitates various transport processes. Further, the generative capability extends beyond the training distribution, with VIOT producing incompressible transports for user-drawn source-target pairs in a real-time interactive system.</p>
+      <p>We demonstrate VIOT on 2D and 3D density-transport benchmarks. Both 2D and 3D rollouts complete in seconds per pair, while per-instance baselines in our 2D comparisons optimize each new pair from scratch and require on the order of an hour, a roughly 10<sup>4</sup>× online speedup.</p>
+    </section>
+
+    <section class="figure-section" aria-labelledby="method-title">
+      <h2 id="method-title">From density pairs to fluid motion</h2>
+      <figure>
+        <a href="static/images/pipeline.webp" aria-label="View the full-size VIOT method diagram">
+          <img src="static/images/pipeline.webp" width="1609" height="547" alt="VIOT pipeline: current density, target density and time enter an FNO; a predicted potential defines a divergence-free velocity, which advects the density." loading="lazy" decoding="async">
+        </a>
+        <figcaption>The operator receives the current density, target density, and time. It predicts a stream function in 2D or a vector potential in 3D, from which a divergence-free velocity is constructed. Repeated operator queries and numerical advection produce the transport trajectory.</figcaption>
+      </figure>
+    </section>
+
+    <section class="figure-section" aria-labelledby="results-title">
+      <h2 id="results-title">Transport in 2D and 3D</h2>
+      <figure>
+        <a href="static/images/results.webp" aria-label="View full-size VIOT transport results">
+          <img src="static/images/results.webp" width="2015" height="661" alt="VIOT transports 2D digits and silhouettes, 3D letters, human poses, and a sphere into an airplane; red boxes mark target keyframes." loading="lazy" decoding="async">
+        </a>
+        <figcaption>Examples generated by trained VIOT operators: 2D MNIST digits and MPEG-7 silhouettes, a 3D “SMOKE” sequence, a 3D human-pose sequence, and sphere-to-airplane transport. Red boxes mark target keyframes; insets show the ground truth.</figcaption>
+      </figure>
+    </section>
+
+    <section class="text-section citation-section" id="bibtex" aria-labelledby="bibtex-title">
+      <div class="section-heading">
+        <h2 id="bibtex-title">BibTeX</h2>
+        <button class="text-button" id="copy-bibtex" type="button" hidden>Copy citation</button>
+      </div>
+      <pre><code id="citation">@misc{he2026variational,
+  title={A Variational Optimal Transport Operator on Incompressible Flow},
+  author={Jinjin He and Shenyifan Lu and Sinan Wang and Zhiqi Li and Duowen Chen and Bo Zhu},
+  year={2026},
+  eprint={2609.13729},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2609.13729}
+}</code></pre>
+      <p class="copy-status" id="copy-status" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../">Jinjin He</a>
+    <span>Georgia Institute of Technology · 2026</span>
+  </footer>
+</body>
+</html>
