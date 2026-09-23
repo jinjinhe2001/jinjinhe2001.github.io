@@ -50,21 +50,70 @@
   display: block;
 }
 
+.publication__title {
+  color: #24292f;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.publication__venue {
+  margin: 3px 0 4px;
+  color: #303841;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.publication__venue strong {
+  color: #303841;
+  font-weight: 700;
+}
+
+.publication__venue-detail,
+.publication__venue--preprint {
+  color: #5c6570;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.publication__venue-detail strong {
+  font-size: 15px;
+}
+
+.publication__authors {
+  color: #59636d;
+}
+
+.publication__authors b {
+  color: #303841;
+  font-weight: 700;
+}
+
 .publication__links {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .publication__links a {
-  font-weight: 700;
+  color: #24758d;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
+  text-underline-offset: 3px;
 }
 
 .publication__links a:hover,
 .publication__links a:focus-visible {
+  color: #1b5668;
   text-decoration: underline;
+}
+
+.publication__links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 @media (max-width: 600px) {
