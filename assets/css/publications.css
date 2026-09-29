@@ -69,6 +69,10 @@
   font-weight: 400;
 }
 
+.publication__venue .publication__venue-abbr {
+  font-weight: 700;
+}
+
 .publication__venue-detail,
 .publication__venue--preprint {
   color: #5c6570;
