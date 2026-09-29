@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Neural Harmonic Measure Operator">
+  <meta name="description" content="A neural operator that learns the density of a domain's harmonic measure as a geometry-only boundary kernel, trained from Walk-on-Spheres exits, and solves new boundary data and sources on a shape without retraining.">
+  <meta name="keywords" content="NHMO, harmonic measure, neural operator, Poisson equation, Walk-on-Spheres, balayage, variable geometry, NeurIPS 2026">
+  <meta name="author" content="Jinjin He, Sinan Wang, Yuchen Sun, Bo Zhu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Georgia Institute of Technology">
+  <meta property="og:title" content="Neural Harmonic Measure Operator">
+  <meta property="og:description" content="A neural operator that learns the density of a domain's harmonic measure as a geometry-only boundary kernel, trained from Walk-on-Spheres exits.">
+  <meta property="og:url" content="https://jinjinhe2001.github.io/nhmo/">
+  <meta property="og:image" content="https://jinjinhe2001.github.io/nhmo/static/figures/method.png">
+  <meta property="og:image:alt" content="NHMO overview figure">
+  <meta property="article:author" content="Jinjin He">
+  <meta property="article:section" content="Research">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Neural Harmonic Measure Operator">
+  <meta name="twitter:description" content="A neural operator that learns the density of a domain's harmonic measure as a geometry-only boundary kernel, trained from Walk-on-Spheres exits.">
+  <meta name="twitter:image" content="https://jinjinhe2001.github.io/nhmo/static/figures/method.png">
+
+  <!-- Academic / Citation -->
+  <meta name="citation_title" content="Neural Harmonic Measure Operator">
+  <meta name="citation_author" content="He, Jinjin">
+  <meta name="citation_author" content="Wang, Sinan">
+  <meta name="citation_author" content="Sun, Yuchen">
+  <meta name="citation_author" content="Zhu, Bo">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=csUQ0IwX0R">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Neural Harmonic Measure Operator</title>
+
+  <link rel="icon" type="image/png" sizes="16x16"   href="static/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="static/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="static/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180"      href="static/images/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- MathJax for inline math -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"]] },
+      options: { skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Neural Harmonic Measure Operator",
+    "description": "A neural operator that learns the density of a domain's harmonic measure as a geometry-only boundary kernel, trained from Walk-on-Spheres exits.",
+    "author": [
+      { "@type": "Person", "name": "Jinjin He",  "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } },
+      { "@type": "Person", "name": "Sinan Wang", "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } },
+      { "@type": "Person", "name": "Yuchen Sun", "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } },
+      { "@type": "Person", "name": "Bo Zhu",     "affiliation": { "@type": "Organization", "name": "Georgia Institute of Technology" } }
+    ],
+    "datePublished": "2026",
+    "publisher": { "@type": "Organization", "name": "Conference on Neural Information Processing Systems (NeurIPS)" },
+    "url": "https://jinjinhe2001.github.io/nhmo/",
+    "keywords": ["harmonic measure", "neural operator", "Poisson equation", "Walk-on-Spheres", "NeurIPS 2026"],
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <style>
+    /* Figure block: image + caption */
+    .figure-block { margin: 2.2rem auto; max-width: 960px; }
+    .figure-block img { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .figure-block .figure-caption { margin-top: 0.6rem; font-size: 0.95rem; color: #444; line-height: 1.5; text-align: justify; }
+    .figure-block .figure-caption strong { color: #111; }
+    /* Results table */
+    .results-table { margin: 1.6rem auto 0.4rem; border-collapse: collapse; font-size: 0.98rem; }
+    .results-table th, .results-table td { padding: 0.35rem 0.9rem; text-align: center; }
+    .results-table thead th { border-bottom: 1.5px solid #333; }
+    .results-table tbody tr:last-child td { border-top: 1px solid #999; font-weight: 700; }
+    .results-table td:first-child, .results-table th:first-child { text-align: left; }
+    .table-wrap { max-width: 960px; margin: 0 auto; overflow-x: auto; }
+    .table-caption { max-width: 960px; margin: 0.6rem auto 0; font-size: 0.95rem; color: #444; line-height: 1.5; text-align: justify; }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+
+              <h1 class="title is-1 publication-title">
+                Neural Harmonic Measure Operator
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://jinjinhe2001.github.io/" target="_blank">Jinjin He</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://sinanw.com/" target="_blank">Sinan Wang</a>,
+                </span>
+                <span class="author-block">Yuchen Sun,</span>
+                <span class="author-block">
+                  <a href="https://faculty.cc.gatech.edu/~bozhu/" target="_blank">Bo Zhu</a>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Georgia Institute of Technology</span>
+                <br>
+                <span class="author-block"><strong>NeurIPS 2026</strong></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+
+                  <span class="link-block">
+                    <a href="https://openreview.net/pdf?id=csUQ0IwX0R" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://openreview.net/forum?id=csUQ0IwX0R" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                      <span>OpenReview</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/jinjinhe2001/NHMO-Neural-Harmonic-Measure-Operator" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fab fa-github"></i></span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://huggingface.co/jinjinhe2001/NHMO" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon"><i class="fas fa-database"></i></span>
+                      <span>Checkpoints &amp; Data</span>
+                    </a>
+                  </span>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End hero -->
+
+
+    <!-- Teaser (Fig. 1) -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="figure-block">
+            <img src="static/figures/method.png" alt="NHMO overview: harmonic-measure density with Walk-on-Spheres paths and the residual lift">
+            <div class="figure-caption">
+              <strong>Figure 1 &mdash; NHMO overview.</strong>
+              Harmonic-measure density $K_\theta \approx d\omega_p/d\sigma$ with Walk-on-Spheres paths, and the residual
+              lift $v_\varphi$, composed additively (bottom). Each WoS step lands on the largest circle inside $\Omega$; a
+              walk stops in the $\varepsilon$-shell (drawn wider than in practice) and is projected to $\partial\Omega$.
+              Right: once fitted for $\Omega$, $K_\theta$ solves any new boundary datum without retraining.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser -->
+
+
+    <!-- Abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                We introduce <em>Neural Harmonic Measure Operator (NHMO)</em>, a neural solver for elliptic PDE problems
+                on variable-shape domains. The harmonic measure of a domain is the boundary probability distribution
+                that, integrated against any boundary data, returns the Dirichlet Laplace solution. It depends only on
+                the geometry, not on the boundary data. NHMO parameterizes the density of this measure as a
+                transformer-based boundary kernel supervised by Walk-on-Spheres exit samples, so one trained kernel
+                handles different boundary values on a shape with no retraining. We extend it to Poisson via a
+                classical decomposition, with an auxiliary network amortizing the source-induced correction and
+                avoiding the singular volume quadrature that breaks direct evaluation. At inference, new boundary
+                values and new sources both yield PDE solutions by re-integration against the fitted kernel and lift,
+                with no retraining. NHMO improves over four prior baselines on the MCB-B 3D variable-shape Poisson
+                benchmark across all five categories, and is competitive with major neural-operator baselines on a
+                controlled 2D testbed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End abstract -->
+
+
+    <!-- Method -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method</h2>
+
+        <div class="content has-text-justified" style="max-width: 960px; margin: 0 auto;">
+          <p>
+            For a Poisson problem $\Delta u = f$ in $\Omega$ with $u = h$ on $\partial\Omega$, the classical balayage
+            split writes the solution as a boundary integral of $h$ against the harmonic measure $\omega_p$ plus a
+            source-only term that vanishes on the boundary. NHMO learns both pieces:
+          </p>
+          $$u(p) \;=\; \big\langle h,\, K_\theta(p,\cdot\,;\Omega) \big\rangle_{\partial\Omega} \;+\; v_\varphi(p;\Omega,h,f).$$
+          <p>
+            The kernel $K_\theta$ approximates the density $d\omega_p/d\sigma$ and depends on the geometry alone. It is
+            trained from Walk-on-Spheres exit points, without solution data. Once it is evaluated for a shape, every new
+            boundary condition is a quadrature against the same kernel matrix, and the lift $v_\varphi$ adds the
+            source contribution.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <!-- End method -->
+
+
+    <!-- Results -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+
+        <div class="table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr><th>Method</th><th>Nut</th><th>Gear</th><th>Motor</th><th>Fitting</th><th>Screws &amp; Bolts</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Transolver</td><td>0.320</td><td>0.281</td><td>0.407</td><td>0.180</td><td>0.221</td></tr>
+              <tr><td>LNO</td><td>0.372</td><td>0.466</td><td>0.528</td><td>0.259</td><td>0.239</td></tr>
+              <tr><td>UPT</td><td>0.516</td><td>0.507</td><td>0.765</td><td>0.392</td><td>0.358</td></tr>
+              <tr><td>NGF</td><td>0.275</td><td>0.243</td><td>0.338</td><td>0.160</td><td>0.189</td></tr>
+              <tr><td>NHMO (ours)</td><td>0.216</td><td>0.188</td><td>0.284</td><td>0.147</td><td>0.131</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-caption">
+          <strong>MCB-B Poisson benchmark.</strong> Relative $L_2$ error against the FEM reference, mean over 20 unseen
+          test shapes $\times$ 16 unseen $(h, f)$ problems per category. Baseline numbers are from the NGF paper under
+          identical evaluation.
+        </div>
+
+        <div class="figure-block">
+          <img src="static/figures/mcb_qualitative.jpg" alt="Qualitative comparison with NGF on MCB-B Poisson">
+          <div class="figure-caption">
+            <strong>Figure 2 &mdash; Qualitative comparison on MCB-B Poisson.</strong>
+            Per shape, five panels show the FEM reference, the NGF prediction and error, and our prediction and error;
+            the cut face is colored by the field and the back half is drawn as a gray ghost surface. Within each row,
+            the reference and the predictions share one color scale and the four error panels share a second one.
+          </div>
+        </div>
+
+        <div class="figure-block">
+          <img src="static/figures/mnist_qualitative.jpg" alt="2D MNIST out-of-distribution examples">
+          <div class="figure-caption">
+            <strong>Figure 3 &mdash; 2D MNIST, out-of-distribution boundary coefficients.</strong>
+            Per row, a Laplace example (left) and a Poisson example (right). Columns: finite-difference reference and
+            the absolute error of UPT, Transolver, NGF, and NHMO. Within each example, the four error panels share one
+            color scale.
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End results -->
+
+
+    <!-- BibTeX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+<pre id="bibtex-code"><code>@inproceedings{
+he2026nhmo,
+title={Neural Harmonic Measure Operator},
+author={Jinjin He and Sinan Wang and Yuchen Sun and Bo Zhu},
+booktitle={Advances in Neural Information Processing Systems},
+year={2026},
+url={https://openreview.net/forum?id=csUQ0IwX0R}
+}</code></pre>
+      </div>
+    </section>
+    <!-- End BibTeX -->
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content has-text-centered">
+              <p>
+                &copy; 2026 Jinjin He.
+                Back to <a href="https://jinjinhe2001.github.io/" target="_blank">Jinjin&nbsp;He's homepage</a>.
+              </p>
+              <p>
+                This page was built using the
+                <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
+                adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                Licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC&nbsp;BY-SA&nbsp;4.0</a> license.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
