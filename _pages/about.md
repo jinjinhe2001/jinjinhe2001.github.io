@@ -14,6 +14,10 @@ Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science
 
 {% include publications.html %}
 
+## Academic Service
+- **Journal reviewer:** Journal of Computational Physics (JCP), IEEE Transactions on Visualization and Computer Graphics (TVCG)
+- **Conference reviewer:** ICML (Gold Reviewer), ICLR, AAAI
+
 ## Projects
 I’ve worked on a range of projects, from computer graphics and game development to compilers and more. Check out [Projects](https://jinjinhe2001.github.io/projects/) to explore more my works in detail.
 ![projects](/images/simulations.png)
