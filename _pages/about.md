@@ -9,6 +9,9 @@ redirect_from:
 ---
 Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science, advised by Prof. [Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/) in Computer Graphics Lab.
 
+My research focuses on **machine learning for physical and geometric modeling**. I develop differentiable representations and neural operators for physics-based simulation, geometric computing, and generative 3D modeling.
+
+Previously, I received my B.S. in AI and Automation from Huazhong University of Science and Technology (HUST) and my M.S. in Computer Science from Dartmouth College.
 
 ## Research
 
