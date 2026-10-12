@@ -2,7 +2,7 @@
 <div class="publications">
   <article class="publication">
     <a href="{{ '/psf/' | relative_url }}" aria-label="View the PSF project page">
-      <img class="publication__image" src="{{ '/psf/static/images/thumb.png' | relative_url }}" alt="PSF: a flow prior turns noise into 8 predictive states, and a parallel block decoder writes the 8 blocks of a document at once" loading="lazy" decoding="async" width="800" height="450">
+      <img class="publication__image" src="{{ '/psf/static/images/thumb-prefix.png' | relative_url }}" alt="PSF predictive states: a flow prior turns noise into 8 states; state k summarizes only the blocks before k (a lower triangle), and block k, unseen by its state, is written by the block decoder" loading="lazy" decoding="async" width="800" height="450">
     </a>
     <div class="publication__info">
       <b class="publication__title">Rethinking the Roles of Diffusion and Decoding: Predictive-State Flows for Parallel Language Generation</b>
