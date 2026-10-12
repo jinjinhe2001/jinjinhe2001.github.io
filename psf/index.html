@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Predictive-State Flows for Parallel Language Generation</title>
+  <meta name="description" content="PSF divides generative roles in continuous diffusion language models: a rectified-flow prior generates K predictive states, each summarizing only the preceding blocks, and a block decoder writes all blocks in parallel.">
+  <meta name="author" content="Jinjin He, Xinsong Feng, Lucheng Fu, Sinan Wang, Bo Zhu, Jiayun Wang">
+  <link rel="canonical" href="https://jinjinhe2001.github.io/psf/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Rethinking the Roles of Diffusion and Decoding: Predictive-State Flows for Parallel Language Generation">
+  <meta property="og:description" content="Diffuse predictive states, decode tokens: a flow prior over K states and a parallel block decoder.">
+  <meta property="og:url" content="https://jinjinhe2001.github.io/psf/">
+  <meta property="og:image" content="https://jinjinhe2001.github.io/psf/static/images/generation-poster.webp">
+  <meta property="og:image:alt" content="Eight blocks of a 1024-token document written in parallel by the PSF block decoder">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="citation_title" content="Rethinking the Roles of Diffusion and Decoding: Predictive-State Flows for Parallel Language Generation">
+  <meta name="citation_author" content="He, Jinjin">
+  <meta name="citation_author" content="Feng, Xinsong">
+  <meta name="citation_author" content="Fu, Lucheng">
+  <meta name="citation_author" content="Wang, Sinan">
+  <meta name="citation_author" content="Zhu, Bo">
+  <meta name="citation_author" content="Wang, Jiayun">
+  <meta name="citation_publication_date" content="2026/10/09">
+  <meta name="citation_arxiv_id" content="2610.12898">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.12898">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="../">Jinjin He</a>
+    <a href="../research/">All research <span aria-hidden="true">↗</span></a>
+  </nav>
+
+  <main>
+    <header class="project-header">
+      <p class="eyebrow">PSF · arXiv 2026</p>
+      <h1>Rethinking the Roles of Diffusion and Decoding: Predictive-State Flows for Parallel Language Generation</h1>
+      <div class="authors">
+        <a href="../">Jinjin He</a><sup>*</sup>,
+        <span>Xinsong Feng<sup>*</sup></span>,
+        <span>Lucheng Fu</span>,
+        <a href="https://sinanw.com/">Sinan Wang</a>,
+        <a href="https://faculty.cc.gatech.edu/~bozhu/">Bo Zhu</a>,
+        <span>Jiayun Wang</span>
+      </div>
+      <p class="affiliation">Georgia Institute of Technology</p>
+      <p class="equal-note"><sup>*</sup>Equal contribution</p>
+      <div class="resource-links">
+        <a class="button button-primary" href="https://arxiv.org/pdf/2610.12898">Paper <span aria-hidden="true">↗</span></a>
+        <a class="button" href="https://arxiv.org/abs/2610.12898">arXiv</a>
+        <a class="button" href="https://github.com/jinjinhe2001/Predictive-State-Flows-for-Parallel-Language-Generation">Code</a>
+        <a class="button" href="https://huggingface.co/jinjinhe2001/PSF-ParallelLM">Models</a>
+        <a class="button" href="#bibtex">BibTeX</a>
+      </div>
+    </header>
+
+    <figure class="hero">
+      <video id="generation-video" src="static/videos/generation.mp4" poster="static/images/generation-poster.webp"
+             width="1200" height="846" controls autoplay muted loop playsinline preload="metadata"
+             aria-describedby="hero-caption">
+        Your browser does not play MP4 video. <a href="static/videos/generation.mp4">Download the animation</a>.
+      </video>
+      <figcaption id="hero-caption">Generation in two stages. The flow prior denoises 8 predictive states (schematic), then the
+        block decoder writes all 8 blocks of a 1024-token document in parallel, replaying a recorded sample from the
+        paper's evaluation set. Use the player to pause or scrub.</figcaption>
+    </figure>
+
+    <section class="key-idea" aria-labelledby="idea-title">
+      <h2 id="idea-title">Diffuse predictive states, decode tokens</h2>
+      <p class="lead">A predictive state <span class="formula">s<sub>k</sub> = E(x<sup>(&lt;k)</sup>)</span> summarizes only the blocks
+        before block&nbsp;k; block&nbsp;k itself is unseen. The prior models this predictive context, and the block decoder
+        fills in the local token details.</p>
+      <figure>
+        <img src="static/images/overview.webp" width="1608" height="652" alt="Comparison of content latents, which encode the current block and make the prior model both predictive information and specific token choices, with predictive states, which encode only the prefix so the prior models predictive context and the block decoder handles local details" loading="lazy" decoding="async">
+        <figcaption>(a) A content latent encodes the current block, so the prior must model both predictive information and
+          specific token choices. (b) In PSF, s<sub>k</sub> encodes only the prefix before block&nbsp;k; the prior models the
+          predictive states jointly and the decoder predicts local realizations.</figcaption>
+      </figure>
+    </section>
+
+    <section class="text-section" aria-labelledby="abstract-title">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>In continuous diffusion language models (DLMs), latents generated by the diffusion prior are mapped almost
+        deterministically to tokens, either by a decoder or through a token embedding matrix. Unlike in image generation,
+        where visual details can vary continuously, the diffusion prior must capture fine-grained discrete token choices
+        in continuous space, which can make the joint latent distribution difficult to model. We argue that generative
+        roles should instead be divided: the diffusion prior should generate high-level <em>predictive information</em>,
+        while the decoder should resolve the remaining token-level choices. Based on this view, we introduce
+        <em>Predictive-State Flows</em> (PSF), which partitions a sequence into blocks and associates each block with a
+        predictive state computed solely from the preceding context. A rectified-flow prior generates the sequence of
+        predictive states, after which a block-causal decoder generates all blocks in parallel, autoregressively only
+        within each block. This design reduces diffusion from L token-level states to K&nbsp;≪&nbsp;L predictive states
+        and reduces token-level sequential depth to L/K. On unconditional OpenWebText generation, a 197M-parameter model
+        with K&nbsp;=&nbsp;8 achieves a generative perplexity of 22.8 at entropy 5.16 using 0.31 TFLOPs per 1024-token
+        document, compared with 24.0 and 7.2 TFLOPs for ELF-B with 32 sampling steps. The corresponding measured operating
+        points yield MAUVE@512 of 0.93 and 0.73, respectively. Controlled comparisons further show that content states,
+        which additionally encode their own blocks, yield 8–16% higher generative perplexity than predictive states, and
+        that replacing sampled predictive-state trajectories with a shared mean lowers MAUVE@512 by 0.11. These results
+        suggest that latent design for continuous DLMs should consider not only how compactly text is represented, but
+        also how generative roles are divided between the prior and the decoder.</p>
+    </section>
+
+    <section class="figure-section" aria-labelledby="method-title">
+      <h2 id="method-title">How PSF works</h2>
+      <div class="method-steps">
+        <article class="method-step">
+          <img src="static/images/arch-encoder.webp" width="816" height="580" alt="A block-causal prefix encoder pools each block; shifting by one block gives state s_k from the blocks before k, with s_1 a learned begin state" loading="lazy" decoding="async">
+          <h3><span class="step">1</span>Predictive states</h3>
+          <p>One block-causal encoder pass pools each block. Shifting by one block gives
+            s<sub>k</sub>&nbsp;=&nbsp;E(x<sup>(&lt;k)</sup>), a summary of everything before block&nbsp;k; s<sub>1</sub> is a
+            learned begin state.</p>
+        </article>
+        <article class="method-step">
+          <img src="static/images/arch-prior.webp" width="776" height="560" alt="A flow prior with bidirectional attention turns Gaussian noise into all K predictive states jointly in T sampling steps" loading="lazy" decoding="async">
+          <h3><span class="step">2</span>Flow prior over states</h3>
+          <p>At generation time there is no text yet. A rectified-flow prior turns Gaussian noise into all K states jointly
+            in 50 Euler steps: diffusion runs over K&nbsp;≪&nbsp;L states instead of L tokens.</p>
+        </article>
+        <article class="method-step">
+          <img src="static/images/arch-decoder.webp" width="944" height="620" alt="K decoder branches share parameters; branch k reads states s_1 to s_k and writes its block; the first token of the next block conditions the previous branch from step 2" loading="lazy" decoding="async">
+          <h3><span class="step">3</span>Parallel block decoder</h3>
+          <p>Branch k reads s<sub>≤k</sub> and writes its block autoregressively; all K branches advance together, so the
+            token-level sequential depth is L/K. From step&nbsp;2 each branch also sees the next block's first token, its
+            landing target.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="figure-section" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+
+      <div class="result-block">
+        <h3>Measured operating points on OpenWebText</h3>
+        <figure>
+        <div class="table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr><th scope="col">Model</th><th scope="col">Size</th><th scope="col">TFLOPs</th><th scope="col">H100 ms / doc</th>
+                <th scope="col">Gen. PPL ↓</th><th scope="col">Entropy</th><th scope="col">MAUVE ↑</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>AR, same data</td><td>197M</td><td>0.43</td><td>219.2</td><td>15.37</td><td>5.151</td><td>0.95</td></tr>
+              <tr><td>MDLM</td><td>170M</td><td>≈347</td><td>16,386.7<sup>†</sup></td><td>35.37</td><td>4.897</td><td>0.44</td></tr>
+              <tr><td>BD3-LM, block 4</td><td>170M</td><td>17.9</td><td>1,416.5<sup>†</sup></td><td>23.75</td><td>5.039</td><td>0.61</td></tr>
+              <tr><td>ELF-B, 32 steps</td><td>105M</td><td>7.2</td><td>20.9</td><td>23.97</td><td>5.158</td><td>0.73</td></tr>
+              <tr><td>ELF-B, 64 steps</td><td>105M</td><td>14.2</td><td>40.9</td><td>19.42</td><td>5.096</td><td>0.89</td></tr>
+              <tr class="ours group-start"><td>PSF K = 8, plain</td><td>197M</td><td>0.31</td><td>27.3</td><td>22.75</td><td>5.164</td><td>0.93</td></tr>
+              <tr class="ours"><td>PSF K = 8, states-only</td><td>197M</td><td>0.31</td><td>32.5</td><td>18.95</td><td>5.158</td><td>0.85</td></tr>
+              <tr class="ours"><td>PSF-L K = 8, plain</td><td>677M</td><td>1.10</td><td>40.2</td><td>17.79</td><td>5.146</td><td>0.90</td></tr>
+              <tr class="ours"><td>PSF-L K = 8, states-only</td><td>677M</td><td>1.10</td><td>45.0</td><td>15.98</td><td>5.144</td><td>0.89</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>Selected rows of Table&nbsp;1: 1000 unconditional samples per row, generative perplexity under GPT-2 Large,
+          per-document unigram entropy, MAUVE on the first 512 judge tokens; TFLOPs and H100 milliseconds per 1024-token
+          document at batch 32 (<sup>†</sup>eager). Perplexity is only comparable at matched entropy (below).</figcaption>
+        </figure>
+      </div>
+
+      <div class="result-block">
+        <h3>Quality per FLOP and per second</h3>
+        <figure>
+          <img src="static/images/results-quality.webp" width="1268" height="484" alt="(a) Generative perplexity at entropy 5.16 against TFLOPs per document: PSF at K equals 8 uses 23 times fewer FLOPs than 32-step ELF-B. (b) Perplexity against documents per second at batch 32 and 256" loading="lazy" decoding="async">
+          <figcaption>(a) Perplexity at matched entropy 5.16 against compute: PSF at K&nbsp;=&nbsp;8 needs 23× fewer FLOPs than
+            32-step ELF-B. (b) Perplexity against throughput; lines connect batch 32 (small dots) and batch 256 (larger
+            markers).</figcaption>
+        </figure>
+      </div>
+
+      <div class="result-block">
+        <h3>Perplexity–entropy curves and landing targets</h3>
+        <figure>
+          <img src="static/images/results-curves.webp" width="1268" height="427" alt="(a) Perplexity against entropy for PSF, PSF-L, ELF-B, BD3-LM and GPT-2 small. (b) Landing-target ablations at K equals 8 and 64" loading="lazy" decoding="async">
+          <figcaption>(a) PSF at K&nbsp;=&nbsp;8, plain (solid) and states-only nucleus sampling (hollow, dotted), against
+            ELF-B (32/64 steps), BD3-LM (block 4) and GPT-2 small. (b) Landing-target ablations at K&nbsp;∈&nbsp;{8,&nbsp;64}:
+            full model, landing target switched off at inference, and retrained without it.</figcaption>
+        </figure>
+      </div>
+
+      <div class="result-block figure-narrow">
+        <h3>Longer blocks help PSF</h3>
+        <figure>
+          <img src="static/images/results-blocklen.webp" width="623" height="415" alt="Perplexity at entropy 5.16 against block length: PSF and PSF-L improve with longer blocks while BD3-LM degrades" loading="lazy" decoding="async">
+          <figcaption>Perplexity at entropy 5.16 against block length ℓ&nbsp;=&nbsp;1024/K: longer blocks help PSF but hurt
+            BD3-LM. Star: PSF-L at K&nbsp;=&nbsp;64, trained longer.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="text-section code-section" aria-labelledby="code-title">
+      <h2 id="code-title">Code and checkpoints</h2>
+      <pre><code>git clone https://github.com/jinjinhe2001/Predictive-State-Flows-for-Parallel-Language-Generation.git
+cd Predictive-State-Flows-for-Parallel-Language-Generation &amp;&amp; pip install -r requirements.txt
+hf download jinjinhe2001/PSF-ParallelLM --include "psf_k8.pt" --local-dir checkpoints
+python -m scripts.eval_gen --ckpt checkpoints/psf_k8.pt $(cat configs/models/psf_k8.args) \
+    $(cat configs/sampling/psf_k8.args) --save-texts outputs/texts_psf_k8</code></pre>
+      <p>The <a href="https://github.com/jinjinhe2001/Predictive-State-Flows-for-Parallel-Language-Generation">code repository</a>
+        has the training recipe (one script per model), evaluation scripts and the configs; the
+        <a href="https://huggingface.co/jinjinhe2001/PSF-ParallelLM">Hugging Face repository</a> has all 11 checkpoints of the
+        paper (PSF and PSF-L at K = 64, 32, 16, 8, the states-only priors and the same-data AR baseline).</p>
+    </section>
+
+    <section class="text-section citation-section" id="bibtex" aria-labelledby="bibtex-title">
+      <div class="section-heading">
+        <h2 id="bibtex-title">BibTeX</h2>
+        <button class="text-button" id="copy-bibtex" type="button" hidden>Copy citation</button>
+      </div>
+      <pre><code id="citation">@article{he2026psf,
+  title   = {Rethinking the Roles of Diffusion and Decoding: Predictive-State Flows for Parallel Language Generation},
+  author  = {He, Jinjin and Feng, Xinsong and Fu, Lucheng and Wang, Sinan and Zhu, Bo and Wang, Jiayun},
+  journal = {arXiv preprint arXiv:2610.12898},
+  year    = {2026}
+}</code></pre>
+      <p class="copy-status" id="copy-status" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../">Jinjin He</a>
+    <span>Georgia Institute of Technology · 2026</span>
+  </footer>
+</body>
+</html>

@@ -1,6 +1,25 @@
 <link rel="stylesheet" href="{{ '/assets/css/publications.css' | relative_url }}">
 <div class="publications">
   <article class="publication">
+    <a href="{{ '/psf/' | relative_url }}" aria-label="View the PSF project page">
+      <picture>
+        <source media="(prefers-reduced-motion: reduce)" srcset="{{ '/psf/static/images/generation-preview-poster.webp' | relative_url }}">
+        <img class="publication__image" src="{{ '/psf/static/images/generation-preview.webp' | relative_url }}" alt="PSF generation: a flow prior produces 8 predictive states, then a block decoder writes 8 blocks of a document in parallel" loading="lazy" decoding="async" width="400" height="282">
+      </picture>
+    </a>
+    <div class="publication__info">
+      <b class="publication__title">Rethinking the Roles of Diffusion and Decoding: Predictive-State Flows for Parallel Language Generation</b>
+      <span class="publication__venue publication__venue--preprint">arXiv preprint, 2026</span>
+      <span class="publication__authors"><b>Jinjin He</b>*, Xinsong Feng*, Lucheng Fu, Sinan Wang, Bo Zhu, Jiayun Wang (*: co-first author)</span>
+      <div class="publication__links">
+        <a href="https://arxiv.org/pdf/2610.12898">Paper</a>
+        <a href="https://github.com/jinjinhe2001/Predictive-State-Flows-for-Parallel-Language-Generation">Code</a>
+        <a href="https://huggingface.co/jinjinhe2001/PSF-ParallelLM">Models</a>
+        <a href="{{ '/psf/' | relative_url }}">Project Page</a>
+      </div>
+    </div>
+  </article>
+  <article class="publication">
     <a class="publication__preview-pair" href="{{ '/viot/' | relative_url }}" aria-label="View the VIOT project page">
       <picture>
         <source media="(prefers-reduced-motion: reduce)" srcset="{{ '/viot/static/images/poem-fig9-poster.webp' | relative_url }}">
