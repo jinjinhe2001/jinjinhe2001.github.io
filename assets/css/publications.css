@@ -88,6 +88,24 @@
   color: #59636d;
 }
 
+.publication__authors a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.publication__authors a:hover,
+.publication__authors a:focus-visible {
+  color: #24758d;
+  text-decoration: underline;
+}
+
+.publication__authors a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .publication__authors b {
   color: #303841;
   font-weight: 700;
