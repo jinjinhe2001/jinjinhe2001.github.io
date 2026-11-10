@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science, advised by Prof. [Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/) in Computer Graphics Lab.
+Hi! I am currently a Ph.D. student at Georgia Tech, majoring in Computer Science, advised by Prof. [Bo Zhu](https://faculty.cc.gatech.edu/~bozhu/) in Computer Graphics Lab. I am also a World Model Research Intern at [Epic Games](https://www.epicgames.com/) (Unreal Engine).
 
 My research focuses on **machine learning for physical and geometric modeling**. I develop differentiable representations and neural operators for physics-based simulation, geometric computing, and generative 3D modeling.
 
